@@ -64,8 +64,6 @@ def build_video():
 
     print(f"Using {len(selected)} chunk(s) = {total:.1f}s of video")
 
-    # Write a concat list where each entry uses -ss for the start offset
-    # We do this by re-encoding the first chunk trimmed, then concat the rest
     # Step 1: trim the first chunk from the random offset → first_part.mp4
     first_chunk_path, offset = selected[0]
     subprocess.run([
@@ -96,15 +94,21 @@ def build_video():
         "Alignment=2,MarginV=40"
     )
     
-    # 🔧 FIX: Using relative path to avoid FFmpeg path parsing bugs
-    subs_filter_path = SUBS_FILE
+    # 🔧 FIX 1: Verify the file exists AND isn't 0 bytes to prevent FFmpeg crashes
+    if not os.path.exists(SUBS_FILE):
+        raise FileNotFoundError(f"❌ Subtitle file '{SUBS_FILE}' is completely missing!")
+    if os.path.getsize(SUBS_FILE) == 0:
+        raise ValueError(f"❌ Subtitle file '{SUBS_FILE}' is 0 bytes! The TTS script failed to generate word boundaries.")
+
+    # 🔧 FIX 2: Explicitly use `./` and `filename=` to bypass FFmpeg parsing bugs
+    subs_filter_path = f"./{SUBS_FILE}"
 
     subprocess.run([
         "ffmpeg", "-y",
         "-i", "raw_video.mp4",
         "-i", AUDIO_FILE,
         "-t", str(audio_duration),
-        "-vf", f"subtitles={subs_filter_path}:force_style='{subtitle_style}'",
+        "-vf", f"subtitles=filename='{subs_filter_path}':force_style='{subtitle_style}'",
         "-c:v", "libx264", "-crf", "23", "-preset", "fast",
         "-c:a", "aac", "-b:a", "128k",
         "-map", "0:v:0", "-map", "1:a:0",
@@ -112,7 +116,7 @@ def build_video():
         OUTPUT
     ], check=True)
 
-    print(f"Final video: {OUTPUT}")
+    print(f"✅ Final video successfully created: {OUTPUT}")
     return OUTPUT
 
 if __name__ == "__main__":
