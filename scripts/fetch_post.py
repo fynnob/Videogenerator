@@ -1,4 +1,5 @@
-import requests
+import urllib.request
+import urllib.error
 import json
 import os
 import sys
@@ -166,9 +167,14 @@ def load_seen():
 
 def fetch_subreddit(subreddit, limit=50):
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit={limit}"
-    resp = requests.get(url, headers=HEADERS, timeout=10)
-    resp.raise_for_status()
-    return resp.json()["data"]["children"]
+    req = urllib.request.Request(url, headers=HEADERS)
+    
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            data = json.loads(response.read().decode('utf-8'))
+            return data["data"]["children"]
+    except urllib.error.URLError as e:
+        raise Exception(f"Failed to fetch {url}: {e}")
 
 def fetch_best_post():
     seen_data = load_seen()
