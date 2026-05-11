@@ -1,6 +1,7 @@
 {
   "seen_ids": [
-    "1sbvqu5"
+    "1sbvqu5",
+    "1ta73kq"
   ],
   "videos": [
     {
@@ -10,6 +11,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A (RSS)",
       "made_at": "2026-05-11T22:38:30.502503"
+    },
+    {
+      "post_id": "1ta73kq",
+      "title": "Am I the asshole for making my coworker miss his proposal because I wouldn\u2019t cover his shift?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A (RSS)",
+      "made_at": "2026-05-11T23:11:35.819224"
     }
   ]
 }
