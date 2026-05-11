@@ -95,14 +95,16 @@ def build_video():
         "OutlineColour=&H00000000,Outline=2,Bold=1,"
         "Alignment=2,MarginV=40"
     )
-    abs_subs = os.path.abspath(SUBS_FILE)
+    
+    # 🔧 FIX: Using relative path to avoid FFmpeg path parsing bugs
+    subs_filter_path = SUBS_FILE
 
     subprocess.run([
         "ffmpeg", "-y",
         "-i", "raw_video.mp4",
         "-i", AUDIO_FILE,
         "-t", str(audio_duration),
-        "-vf", f"subtitles={abs_subs}:force_style='{subtitle_style}'",
+        "-vf", f"subtitles={subs_filter_path}:force_style='{subtitle_style}'",
         "-c:v", "libx264", "-crf", "23", "-preset", "fast",
         "-c:a", "aac", "-b:a", "128k",
         "-map", "0:v:0", "-map", "1:a:0",
