@@ -14,12 +14,11 @@ async def generate(text, voice, audio_out, subtitle_out):
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
                 f.write(chunk["data"])
-            elif chunk["type"] == "WordBoundary":
-                # The updated SubMaker directly takes the chunk dict
+            # 🔧 FIX: We now look for both Word and Sentence boundaries!
+            elif chunk["type"] in ["WordBoundary", "SentenceBoundary"]:
                 submaker.feed(chunk)
 
     with open(subtitle_out, "w", encoding="utf-8") as f:
-        # get_srt() replaces generate_subs()
         f.write(submaker.get_srt())
 
     print(f"✅ Audio saved to {audio_out}")
