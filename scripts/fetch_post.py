@@ -1,5 +1,7 @@
 import urllib.request
 import urllib.error
+import xml.etree.ElementTree as ET
+import html
 import json
 import os
 import sys
@@ -16,23 +18,20 @@ SUBREDDITS = [
     "offmychest",
     "relationship_advice",
 ]
-MIN_UPVOTES = 1000
 MIN_WORDS   = 150
 MAX_WORDS   = 800
 SEEN_FILE   = "seen_posts.json"
 
 HEADERS = {
-    # Reddit requires a descriptive User-Agent or it rate-limits/blocks you
-    "User-Agent": "RedditVideoBot/1.0 (automated video creation; one request per hour)"
+    # Using a generic browser User-Agent often helps with RSS fetching
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
 # ---------------------------------------------------------------------------
 # Text cleanup — expand Reddit shorthand so TTS sounds natural
 # ---------------------------------------------------------------------------
 
-# Order matters: longer/more specific patterns first
 REPLACEMENTS = [
-    # Reddit post-specific slang
     (r"\bAITA\b",           "Am I the asshole"),
     (r"\baita\b",           "am I the asshole"),
     (r"\bWIBTA\b",          "would I be the asshole"),
@@ -50,8 +49,6 @@ REPLACEMENTS = [
     (r"\btifu\b",           "today I messed up"),
     (r"\bOP\b",             "the original poster"),
     (r"\bop\b",             "the original poster"),
-
-    # Common internet abbreviations
     (r"\bIMO\b",            "in my opinion"),
     (r"\bimo\b",            "in my opinion"),
     (r"\bIMHO\b",           "in my honest opinion"),
@@ -103,19 +100,15 @@ REPLACEMENTS = [
     (r"\btl;dr\b",          "to summarize"),
     (r"\bTLDR\b",           "to summarize"),
     (r"\btldr\b",           "to summarize"),
-
-    # Formatting artifacts that sound bad in TTS
-    (r"\*\*(.+?)\*\*",      r"\1"),   # bold markdown
-    (r"\*(.+?)\*",          r"\1"),   # italic markdown
-    (r"\_(.+?)\_",          r"\1"),   # underscore italic
-    (r"~~(.+?)~~",          r"\1"),   # strikethrough
-    (r"`(.+?)`",            r"\1"),   # inline code
+    (r"\*\*(.+?)\*\*",      r"\1"),   
+    (r"\*(.+?)\*",          r"\1"),   
+    (r"\_(.+?)\_",          r"\1"),   
+    (r"~~(.+?)~~",          r"\1"),   
+    (r"`(.+?)`",            r"\1"),   
     (r"&amp;",              "and"),
     (r"&lt;",               "less than"),
     (r"&gt;",               "greater than"),
     (r"&nbsp;",             " "),
-
-    # Clean up excessive newlines / whitespace
     (r"\n{3,}",             "\n\n"),
     (r"[ \t]{2,}",          " "),
 ]
@@ -162,63 +155,79 @@ def load_seen():
     return {"seen_ids": [], "videos": []}
 
 # ---------------------------------------------------------------------------
-# Reddit JSON fetching (no API key needed)
+# Reddit RSS fetching (No API key needed)
 # ---------------------------------------------------------------------------
 
-def fetch_subreddit(subreddit, limit=50):
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit={limit}"
+def fetch_subreddit_rss(subreddit):
+    url = f"https://www.reddit.com/r/{subreddit}/hot.rss?limit=50"
     req = urllib.request.Request(url, headers=HEADERS)
     
     try:
         with urllib.request.urlopen(req, timeout=10) as response:
-            data = json.loads(response.read().decode('utf-8'))
-            return data["data"]["children"]
+            xml_data = response.read()
+            return ET.fromstring(xml_data)
     except urllib.error.URLError as e:
         raise Exception(f"Failed to fetch {url}: {e}")
 
 def fetch_best_post():
     seen_data = load_seen()
     seen_ids  = set(seen_data["seen_ids"])
+    ns = {'atom': 'http://www.w3.org/2005/Atom'} # Reddit RSS uses the Atom namespace
 
     for subreddit in SUBREDDITS:
-        print(f"🔍 Checking r/{subreddit}...")
+        print(f"🔍 Checking r/{subreddit} (RSS)...")
         try:
-            posts = fetch_subreddit(subreddit)
+            root = fetch_subreddit_rss(subreddit)
         except Exception as e:
             print(f"   ⚠️  Failed to fetch r/{subreddit}: {e}")
             continue
 
-        for item in posts:
-            post = item["data"]
+        for entry in root.findall('atom:entry', ns):
+            # 1. Get Link & Post ID
+            link_node = entry.find('atom:link', ns)
+            post_link = link_node.attrib.get('href', '') if link_node is not None else ""
+            
+            post_id_match = re.search(r'/comments/([^/]+)/', post_link)
+            post_id = post_id_match.group(1) if post_id_match else post_link
+            
+            if post_id in seen_ids or not post_id:
+                continue
 
-            # Basic filters
-            if post["id"] in seen_ids:
-                continue
-            if post.get("score", 0) < MIN_UPVOTES:
-                continue
-            if not post.get("is_self", False):   # skip link posts
-                continue
+            # 2. Get Title
+            title_node = entry.find('atom:title', ns)
+            raw_title = title_node.text if title_node is not None else ""
 
-            raw_text = post.get("selftext", "")
-            if not raw_text or raw_text in ("[removed]", "[deleted]"):
+            # 3. Get Content
+            content_node = entry.find('atom:content', ns)
+            if content_node is None:
                 continue
+                
+            raw_html = content_node.text or ""
+            
+            # Unescape HTML entities and strip HTML tags to get raw text
+            raw_text = html.unescape(raw_html)
+            raw_text = re.sub(r'<[^>]+>', ' ', raw_text)
+            
+            # Clean up the RSS boilerplate ("submitted by /u/user [link] [comments]")
+            raw_text = re.sub(r'submitted by\s*/u/[\w-]+\s*', '', raw_text, flags=re.IGNORECASE)
+            raw_text = raw_text.replace('[link]', '').replace('[comments]', '').strip()
 
             word_count = len(raw_text.split())
             if word_count < MIN_WORDS or word_count > MAX_WORDS:
                 continue
 
             # Clean text for TTS
-            clean_title = clean_text(post["title"])
+            clean_title = clean_text(raw_title)
             clean_body  = clean_text(raw_text)
             voice       = pick_voice(clean_body)
 
             result = {
-                "id":          post["id"],
+                "id":          post_id,
                 "title":       clean_title,
                 "text":        clean_body,
-                "raw_title":   post["title"],
+                "raw_title":   raw_title,
                 "subreddit":   subreddit,
-                "score":       post["score"],
+                "score":       "N/A (RSS)", 
                 "voice":       voice,
                 "word_count":  word_count,
                 "fetched_at":  datetime.utcnow().isoformat(),
@@ -228,7 +237,7 @@ def fetch_best_post():
                 json.dump(result, f, indent=2)
 
             print(f"✅ Found: {clean_title[:60]}...")
-            print(f"   r/{subreddit} | Score: {post['score']} | Words: {word_count} | Voice: {voice}")
+            print(f"   r/{subreddit} | Words: {word_count} | Voice: {voice}")
             return result
 
     print("❌ No suitable posts found this run.")
