@@ -19,7 +19,7 @@ SUBREDDITS = [
     "relationship_advice",
 ]
 MIN_WORDS   = 150
-MAX_WORDS   = 800
+MAX_WORDS   = 400
 SEEN_FILE   = "seen_posts.json"
 
 HEADERS = {
