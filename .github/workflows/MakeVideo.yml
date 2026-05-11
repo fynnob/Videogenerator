@@ -3,11 +3,15 @@ name: Generate Reddit Video
 on:
   schedule:
     - cron: '0 * * * *'   # every hour
-  workflow_dispatch:        # manual trigger from GitHub UI
+  workflow_dispatch:      # manual trigger from GitHub UI
 
 jobs:
   make-video:
     runs-on: ubuntu-latest
+
+    # It's good practice to explicitly grant write permissions so your bot can commit the seen_posts.json file
+    permissions:
+      contents: write
 
     steps:
       # ── 1. Checkout repo ──
@@ -69,7 +73,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install edge-tts
+        run: pip install -r requirements.txt
 
       # ── 4. Fetch best Reddit post ──
       - name: Fetch Reddit post
@@ -79,11 +83,17 @@ jobs:
       - name: Generate TTS + captions
         run: python scripts/generate_tts.py
 
-      # ── 6. Render final video with ffmpeg ──
+      # ── 6. Install FFmpeg ──
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      # ── 7. Render final video with ffmpeg ──
       - name: Render video
         run: python scripts/render_video.py
 
-      # ── 7. Mark post as seen and commit back ──
+      # ── 8. Mark post as seen and commit back ──
       - name: Update seen_posts.json
         run: python scripts/update_seen.py
 
@@ -95,7 +105,7 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: mark post as seen [skip ci]"
           git push
 
-      # ── 8. Upload output.mp4 as artifact (for testing) ──
+      # ── 9. Upload output.mp4 as artifact (for testing) ──
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
         with:
