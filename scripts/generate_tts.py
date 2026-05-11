@@ -23,8 +23,26 @@ async def generate(text, voice, audio_out, subtitle_out):
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
                 f.write(chunk["data"])
-            elif chunk["type"] == "WordBoundary":
-                words.append(chunk)
+                
+            # 🔧 FIX: Catch both boundary types!
+            elif chunk["type"] in ["WordBoundary", "SentenceBoundary"]:
+                text_chunk = chunk["text"].strip()
+                
+                # If it's a full sentence, mathematically split it into individual words
+                if " " in text_chunk:
+                    sub_words = text_chunk.split()
+                    if len(sub_words) > 0:
+                        # Estimate how long each word takes by dividing total time
+                        word_dur = chunk["duration"] // len(sub_words)
+                        for idx, w in enumerate(sub_words):
+                            words.append({
+                                "text": w,
+                                "offset": chunk["offset"] + (idx * word_dur),
+                                "duration": word_dur
+                            })
+                else:
+                    # It's already a single word
+                    words.append(chunk)
 
     # ---------------------------------------------------------
     # Custom Subtitle Builder (Karaoke highlighting + word limits)
@@ -71,7 +89,7 @@ async def generate(text, voice, audio_out, subtitle_out):
 if __name__ == "__main__":
     post = load_post()
 
-    # 🔧 FIX: Add an ellipsis and newlines to force a natural pause after the title
+    # Add an ellipsis and newlines to force a natural pause after the title
     full_text = f"{post['title']}... \n\n{post['text']}"
     voice     = post["voice"]
 
