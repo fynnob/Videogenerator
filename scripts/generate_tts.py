@@ -23,16 +23,11 @@ async def generate(text, voice, audio_out, subtitle_out):
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
                 f.write(chunk["data"])
-                
-            # 🔧 FIX: Catch both boundary types!
             elif chunk["type"] in ["WordBoundary", "SentenceBoundary"]:
                 text_chunk = chunk["text"].strip()
-                
-                # If it's a full sentence, mathematically split it into individual words
                 if " " in text_chunk:
                     sub_words = text_chunk.split()
                     if len(sub_words) > 0:
-                        # Estimate how long each word takes by dividing total time
                         word_dur = chunk["duration"] // len(sub_words)
                         for idx, w in enumerate(sub_words):
                             words.append({
@@ -41,8 +36,27 @@ async def generate(text, voice, audio_out, subtitle_out):
                                 "duration": word_dur
                             })
                 else:
-                    # It's already a single word
                     words.append(chunk)
+
+    # ---------------------------------------------------------
+    # 🔧 NEW: Dynamically find the exact end of the title!
+    # ---------------------------------------------------------
+    title_duration_sec = 4.0 # Safe fallback
+    for i in range(len(words) - 1):
+        end_current = words[i]["offset"] + words[i]["duration"]
+        start_next = words[i+1]["offset"]
+        
+        # We added "... \n\n" after the title, which causes a pause longer than 0.4 seconds. 
+        # When we detect that specific pause, we know the title is finished!
+        if (start_next - end_current) > 4000000: 
+            title_duration_sec = end_current / 10000000.0
+            break
+
+    # Add a tiny 0.2s visual buffer so it doesn't vanish mid-breath
+    title_duration_sec += 0.2
+    
+    with open("title_duration.txt", "w") as f:
+        f.write(str(round(title_duration_sec, 2)))
 
     # ---------------------------------------------------------
     # Custom Subtitle Builder (Karaoke highlighting + word limits)
@@ -55,12 +69,9 @@ async def generate(text, voice, audio_out, subtitle_out):
     for i in range(0, len(words), WORDS_PER_SCREEN):
         group = words[i:i+WORDS_PER_SCREEN]
         
-        # Create a subtitle frame for each spoken word in the current group
         for j, active_word in enumerate(group):
             start_time = active_word["offset"]
             
-            # To prevent screen flickering, extend the frame's end time 
-            # seamlessly to the start of the next word.
             if j < len(group) - 1:
                 end_time = group[j+1]["offset"]
             else:
@@ -72,7 +83,6 @@ async def generate(text, voice, audio_out, subtitle_out):
             line_text = []
             for k, w in enumerate(group):
                 if k == j:
-                    # Highlight the active word in yellow
                     line_text.append(f'<font color="#ffff00">{w["text"]}</font>')
                 else:
                     line_text.append(w["text"])
@@ -89,7 +99,6 @@ async def generate(text, voice, audio_out, subtitle_out):
 if __name__ == "__main__":
     post = load_post()
 
-    # Add an ellipsis and newlines to force a natural pause after the title
     full_text = f"{post['title']}... \n\n{post['text']}"
     voice     = post["voice"]
 

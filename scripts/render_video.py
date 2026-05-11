@@ -10,6 +10,7 @@ SUBS_FILE  = "captions.srt"
 OUTPUT     = "output.mp4"
 
 def get_duration(filepath):
+    """Uses ffprobe to get the exact duration of a media file."""
     result = subprocess.run(
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
          "-of", "default=noprint_wrappers=1:nokey=1", filepath],
@@ -18,42 +19,40 @@ def get_duration(filepath):
     return float(result.stdout.strip())
 
 def build_video():
+    # 1. Initialize Durations
     audio_duration = get_duration(AUDIO_FILE)
-    print(f"Audio duration: {audio_duration:.1f}s")
+    print(f"🎬 Audio duration: {audio_duration:.1f}s")
 
-    # Sort all available chunks
+    # 2. Select and Loop Video Footage
     all_chunks = sorted(glob.glob(f"{CHUNKS_DIR}/chunk_*.mp4"))
     if not all_chunks:
-        raise FileNotFoundError(f"No chunks found in {CHUNKS_DIR}/")
+        raise FileNotFoundError(f"❌ No chunks found in {CHUNKS_DIR}/")
 
-    # Pick a random starting chunk and a random start time within it
     start_chunk_index = random.randint(0, len(all_chunks) - 1)
     start_chunk       = all_chunks[start_chunk_index]
     chunk_duration    = get_duration(start_chunk)
 
-    # Don't start in the last 10 seconds of a chunk to avoid a tiny useless slice
+    # Pick a random start point, leaving at least 10s of buffer
     max_start = max(0, chunk_duration - 10)
     start_offset = round(random.uniform(0, max_start), 2)
 
-    print(f"Starting at {start_chunk} offset {start_offset:.1f}s")
+    print(f"📍 Starting at {start_chunk} offset {start_offset:.1f}s")
 
-    # Build the ordered chunk list starting from the chosen chunk,
-    # wrapping around to the beginning if we run out
     num_chunks = len(all_chunks)
     ordered_chunks = [
         all_chunks[(start_chunk_index + i) % num_chunks]
         for i in range(num_chunks)
     ]
 
-    # Keep adding chunks (cycling if needed) until we have enough footage
     selected = []
     total    = 0.0
 
-    # First chunk starts at the random offset so only counts partial duration
+    # Handle the first partial chunk
     first_available = chunk_duration - start_offset
     selected.append((ordered_chunks[0], start_offset))
     total += first_available
 
+    # Cycle through chunks until the audio is fully covered
     chunk_cycle_index = 1
     while total < audio_duration:
         chunk = ordered_chunks[chunk_cycle_index % num_chunks]
@@ -62,9 +61,10 @@ def build_video():
         total += dur
         chunk_cycle_index += 1
 
-    print(f"Using {len(selected)} chunk(s) = {total:.1f}s of video")
+    print(f"🎞️  Stitching {len(selected)} chunk(s) to cover {total:.1f}s of footage")
 
-    # Step 1: trim the first chunk from the random offset → first_part.mp4
+    # 3. Concatenation Process
+    # Trim the first chunk to the starting offset
     first_chunk_path, offset = selected[0]
     subprocess.run([
         "ffmpeg", "-y",
@@ -74,49 +74,62 @@ def build_video():
         "first_part.mp4"
     ], check=True)
 
-    # Step 2: build concat list (first_part + remaining full chunks)
+    # Build the concat list for FFmpeg
     with open("concat_list.txt", "w") as f:
         f.write(f"file '{os.path.abspath('first_part.mp4')}'\n")
         for chunk_path, _ in selected[1:]:
             f.write(f"file '{os.path.abspath(chunk_path)}'\n")
 
-    # Step 3: concatenate everything → raw_video.mp4
+    # Merge video chunks into one raw file
     subprocess.run([
         "ffmpeg", "-y", "-f", "concat", "-safe", "0",
         "-i", "concat_list.txt",
         "-c", "copy", "raw_video.mp4"
     ], check=True)
 
-    # Step 4: trim to exact audio length, layer audio, burn captions
+    # 4. Final Composition (Card, Subtitles, Audio)
+    
+    # Custom Subtitle Styling (Roboto Bold, Shadow, High Positioning)
     subtitle_style = (
-        "FontName=Arial,FontSize=18,PrimaryColour=&H00FFFFFF,"
-        "OutlineColour=&H00000000,Outline=2,Bold=1,"
-        "Alignment=2,MarginV=40"
+        "FontName=Roboto,FontSize=22,PrimaryColour=&H00FFFFFF,"
+        "OutlineColour=&H00000000,Outline=2.5,BackColour=&H80000000,"
+        "Shadow=1.5,Bold=1,Alignment=2,MarginV=80"
     )
     
-    # 🔧 FIX 1: Verify the file exists AND isn't 0 bytes to prevent FFmpeg crashes
-    if not os.path.exists(SUBS_FILE):
-        raise FileNotFoundError(f"❌ Subtitle file '{SUBS_FILE}' is completely missing!")
-    if os.path.getsize(SUBS_FILE) == 0:
-        raise ValueError(f"❌ Subtitle file '{SUBS_FILE}' is 0 bytes! The TTS script failed to generate word boundaries.")
+    if not os.path.exists(SUBS_FILE) or os.path.getsize(SUBS_FILE) == 0:
+        raise ValueError(f"❌ Subtitle file '{SUBS_FILE}' is missing or empty!")
 
-    # 🔧 FIX 2: Explicitly use `./` and `filename=` to bypass FFmpeg parsing bugs
     subs_filter_path = f"./{SUBS_FILE}"
 
+    # Read the dynamic title end-time from the TTS script
+    title_duration = 4.0
+    if os.path.exists("title_duration.txt"):
+        with open("title_duration.txt", "r") as f:
+            title_duration = float(f.read().strip())
+            
+    print(f"📺 Displaying Reddit Card for the first {title_duration} seconds.")
+
+    # The Final FFmpeg Render
     subprocess.run([
         "ffmpeg", "-y",
         "-i", "raw_video.mp4",
         "-i", AUDIO_FILE,
+        "-i", "card.png", 
         "-t", str(audio_duration),
-        "-vf", f"subtitles=filename='{subs_filter_path}':force_style='{subtitle_style}'",
+        "-filter_complex", 
+        # Layer 1: Overlay the card over the video for title_duration
+        f"[0:v][2:v]overlay=(W-w)/2:(H-h)/2:enable='between(t,0,{title_duration})'[with_card];"
+        # Layer 2: Burn subtitles using Roboto font from local directory
+        f"[with_card]subtitles=filename='{subs_filter_path}':fontsdir='.':force_style='{subtitle_style}'[final_v]",
+        "-map", "[final_v]", 
+        "-map", "1:a:0",
         "-c:v", "libx264", "-crf", "23", "-preset", "ultrafast",
         "-c:a", "aac", "-b:a", "128k",
-        "-map", "0:v:0", "-map", "1:a:0",
         "-shortest",
         OUTPUT
     ], check=True)
 
-    print(f"✅ Final video successfully created: {OUTPUT}")
+    print(f"✅ FINAL VIDEO GENERATED: {OUTPUT}")
     return OUTPUT
 
 if __name__ == "__main__":

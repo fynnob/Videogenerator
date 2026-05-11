@@ -83,6 +83,10 @@ jobs:
       - name: Generate TTS + captions
         run: python scripts/generate_tts.py
 
+      # ── 5.5 Create Reddit Visual Card ──
+      - name: Create Reddit Card
+        run: python scripts/make_card.py
+
       # ── 6. Setup FFmpeg (Cached, super fast) ──
       - name: Setup FFmpeg
         uses: FedericoCarboni/setup-ffmpeg@v3
