@@ -21,21 +21,24 @@ jobs:
         run: |
           mkdir -p chunks
 
-          # Get latest release data
-          RELEASE=$(curl -s \
+          # Save release JSON to a file so Python can read it cleanly
+          curl -s \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/releases/latest")
+            "https://api.github.com/repos/${{ github.repository }}/releases/latest" \
+            -o release.json
 
-          echo "Latest release: $(echo $RELEASE | python3 -c "import sys,json; print(json.load(sys.stdin)['tag_name'])")"
+          echo "Latest release: $(python3 -c "import json; d=json.load(open('release.json')); print(d['tag_name'])")"
 
-          # Extract download URLs for chunk_*.mp4 files and download each
-          echo "$RELEASE" | python3 - << 'PYEOF'
-          import sys, json, subprocess, os
+          # Download each chunk_*.mp4 asset
+          python3 << 'PYEOF'
+          import json, subprocess, os, sys
 
-          release = json.load(sys.stdin)
-          assets  = release.get("assets", [])
-          chunks  = [a for a in assets if a["name"].startswith("chunk_") and a["name"].endswith(".mp4")]
+          with open("release.json") as f:
+              release = json.load(f)
+
+          assets = release.get("assets", [])
+          chunks = [a for a in assets if a["name"].startswith("chunk_") and a["name"].endswith(".mp4")]
 
           if not chunks:
               print("ERROR: No chunk_*.mp4 files found in latest release!")
