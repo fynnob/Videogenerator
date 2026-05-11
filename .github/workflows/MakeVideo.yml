@@ -14,48 +14,50 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ── 2. Download latest release chunks ──
-      - name: Get latest release tag
-        id: latest_release
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const release = await github.rest.repos.getLatestRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            });
-            core.setOutput('tag', release.data.tag_name);
-            core.setOutput('assets', JSON.stringify(release.data.assets));
+      # ── 2. Download latest release chunks via curl ──
+      - name: Download chunks from latest release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p chunks
 
-      - name: Download chunk files from release
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            const path = require('path');
+          # Get latest release data
+          RELEASE=$(curl -s \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/latest")
 
-            fs.mkdirSync('chunks', { recursive: true });
+          echo "Latest release: $(echo $RELEASE | python3 -c "import sys,json; print(json.load(sys.stdin)['tag_name'])")"
 
-            const assets = JSON.parse('${{ steps.latest_release.outputs.assets }}');
-            const chunks = assets.filter(a => a.name.startsWith('chunk_') && a.name.endsWith('.mp4'));
+          # Extract download URLs for chunk_*.mp4 files and download each
+          echo "$RELEASE" | python3 - << 'PYEOF'
+          import sys, json, subprocess, os
 
-            if (chunks.length === 0) {
-              core.setFailed('No chunk_*.mp4 files found in latest release (${{ steps.latest_release.outputs.tag }})');
-              return;
-            }
+          release = json.load(sys.stdin)
+          assets  = release.get("assets", [])
+          chunks  = [a for a in assets if a["name"].startswith("chunk_") and a["name"].endswith(".mp4")]
 
-            console.log(`Found ${chunks.length} chunk(s) in release ${{ steps.latest_release.outputs.tag }}`);
+          if not chunks:
+              print("ERROR: No chunk_*.mp4 files found in latest release!")
+              sys.exit(1)
 
-            for (const asset of chunks) {
-              console.log(`Downloading ${asset.name}...`);
-              const response = await github.request(`GET ${asset.url}`, {
-                headers: { Accept: 'application/octet-stream' },
-                request: { parseSuccessResponseBody: false }
-              });
-              const buffer = Buffer.from(await response.data.arrayBuffer());
-              fs.writeFileSync(path.join('chunks', asset.name), buffer);
-              console.log(`  Saved chunks/${asset.name} (${(buffer.length / 1024 / 1024).toFixed(1)} MB)`);
-            }
+          print(f"Found {len(chunks)} chunk(s)")
+          token = os.environ["GH_TOKEN"]
+
+          for asset in sorted(chunks, key=lambda a: a["name"]):
+              url  = asset["url"]
+              name = asset["name"]
+              print(f"Downloading {name}...")
+              subprocess.run([
+                  "curl", "-L", "-s",
+                  "-H", f"Authorization: Bearer {token}",
+                  "-H", "Accept: application/octet-stream",
+                  "-o", f"chunks/{name}",
+                  url
+              ], check=True)
+              size = os.path.getsize(f"chunks/{name}") / 1024 / 1024
+              print(f"  Saved chunks/{name} ({size:.1f} MB)")
+          PYEOF
 
       # ── 3. Python setup ──
       - name: Set up Python
@@ -96,4 +98,4 @@ jobs:
         with:
           name: reddit-video-${{ github.run_number }}
           path: output.mp4
-          retention-days: 1
+          retention-days: 7
