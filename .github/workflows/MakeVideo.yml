@@ -3,43 +3,82 @@ name: Generate Reddit Video
 on:
   schedule:
     - cron: '0 * * * *'   # every hour
-  workflow_dispatch:        # also allows manual trigger from GitHub UI
+  workflow_dispatch:        # manual trigger from GitHub UI
 
 jobs:
   make-video:
     runs-on: ubuntu-latest
 
     steps:
-      # ── 1. Checkout repo (includes seen_posts.json and video chunks) ──
+      # ── 1. Checkout repo ──
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ── 2. Python setup ──
+      # ── 2. Download latest release chunks ──
+      - name: Get latest release tag
+        id: latest_release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const release = await github.rest.repos.getLatestRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            core.setOutput('tag', release.data.tag_name);
+            core.setOutput('assets', JSON.stringify(release.data.assets));
+
+      - name: Download chunk files from release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            fs.mkdirSync('chunks', { recursive: true });
+
+            const assets = JSON.parse('${{ steps.latest_release.outputs.assets }}');
+            const chunks = assets.filter(a => a.name.startsWith('chunk_') && a.name.endsWith('.mp4'));
+
+            if (chunks.length === 0) {
+              core.setFailed('No chunk_*.mp4 files found in latest release (${{ steps.latest_release.outputs.tag }})');
+              return;
+            }
+
+            console.log(`Found ${chunks.length} chunk(s) in release ${{ steps.latest_release.outputs.tag }}`);
+
+            for (const asset of chunks) {
+              console.log(`Downloading ${asset.name}...`);
+              const response = await github.request(`GET ${asset.url}`, {
+                headers: { Accept: 'application/octet-stream' },
+                request: { parseSuccessResponseBody: false }
+              });
+              const buffer = Buffer.from(await response.data.arrayBuffer());
+              fs.writeFileSync(path.join('chunks', asset.name), buffer);
+              console.log(`  Saved chunks/${asset.name} (${(buffer.length / 1024 / 1024).toFixed(1)} MB)`);
+            }
+
+      # ── 3. Python setup ──
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install praw edge-tts
+        run: pip install edge-tts
 
-      # ── 3. Fetch best Reddit post ──
+      # ── 4. Fetch best Reddit post ──
       - name: Fetch Reddit post
-        env:
-          REDDIT_CLIENT_ID:     ${{ secrets.REDDIT_CLIENT_ID }}
-          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: python scripts/fetch_post.py
 
-      # ── 4. Generate TTS audio + subtitles ──
+      # ── 5. Generate TTS audio + subtitles ──
       - name: Generate TTS + captions
         run: python scripts/generate_tts.py
 
-      # ── 5. Render final video with ffmpeg ──
-      #    (ffmpeg is pre-installed on ubuntu-latest runners)
+      # ── 6. Render final video with ffmpeg ──
       - name: Render video
         run: python scripts/render_video.py
 
-      # ── 6. Mark post as seen and commit back ──
+      # ── 7. Mark post as seen and commit back ──
       - name: Update seen_posts.json
         run: python scripts/update_seen.py
 
@@ -51,12 +90,10 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: mark post as seen [skip ci]"
           git push
 
-      # ── 7. Upload output.mp4 as artifact (for testing) ──
-      #    Replace this step later with your YouTube upload script
+      # ── 8. Upload output.mp4 as artifact (for testing) ──
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
         with:
           name: reddit-video-${{ github.run_number }}
           path: output.mp4
-          retention-days: 7
-          
+          retention-days: 1
