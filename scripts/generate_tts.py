@@ -15,13 +15,12 @@ async def generate(text, voice, audio_out, subtitle_out):
             if chunk["type"] == "audio":
                 f.write(chunk["data"])
             elif chunk["type"] == "WordBoundary":
-                submaker.create_sub(
-                    (chunk["offset"], chunk["duration"]),
-                    chunk["text"]
-                )
+                # The updated SubMaker directly takes the chunk dict
+                submaker.feed(chunk)
 
     with open(subtitle_out, "w", encoding="utf-8") as f:
-        f.write(submaker.generate_subs())
+        # get_srt() replaces generate_subs()
+        f.write(submaker.get_srt())
 
     print(f"✅ Audio saved to {audio_out}")
     print(f"✅ Subtitles saved to {subtitle_out}")
