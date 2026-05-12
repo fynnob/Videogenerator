@@ -2,7 +2,8 @@
   "seen_ids": [
     "1sbvqu5",
     "1ta73kq",
-    "1j8q472"
+    "1j8q472",
+    "1tak4ua"
   ],
   "videos": [
     {
@@ -28,6 +29,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-12T00:47:04.077414"
+    },
+    {
+      "post_id": "1tak4ua",
+      "title": "Am I the asshole for refusing to let my brother borrow my savings to fix his business idea?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-12T00:53:01.404196"
     }
   ]
 }
