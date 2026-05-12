@@ -7,7 +7,7 @@ import random
 # --- CONFIGURATION ---
 CHUNKS_DIR = "chunks"
 AUDIO_FILE = "audio.mp3"
-SUBS_FILE  = "captions.srt"
+SUBS_FILE  = "captions.ass"
 OUTPUT     = "output.mp4"
 
 def get_duration(filepath):
