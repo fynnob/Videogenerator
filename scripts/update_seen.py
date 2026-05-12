@@ -6,6 +6,10 @@ SEEN_FILE = "seen_posts.json"
 
 def update_seen():
     # Load post that was just processed
+    if not os.path.exists("post.json"):
+        print("⚠️ No post.json found, skipping update.")
+        return
+
     with open("post.json", "r") as f:
         post = json.load(f)
 
@@ -16,14 +20,17 @@ def update_seen():
     else:
         seen_data = {"seen_ids": [], "videos": []}
 
-    # Add this post
-    seen_data["seen_ids"].append(post["id"])
+    # Add this post to the seen list
+    if post["id"] not in seen_data["seen_ids"]:
+        seen_data["seen_ids"].append(post["id"])
+    
+    # 🔧 FIX: Use .get() so it doesn't crash if 'score' is missing
     seen_data["videos"].append({
         "post_id":   post["id"],
         "title":     post["title"],
         "subreddit": post["subreddit"],
         "voice":     post["voice"],
-        "score":     post["score"],
+        "score":     post.get("score", "N/A"), 
         "made_at":   datetime.utcnow().isoformat()
     })
 
