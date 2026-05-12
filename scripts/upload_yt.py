@@ -39,7 +39,7 @@ def upload_video():
                 "title": video_title,
                 "description": f"Story from r/{post_data.get('subreddit', 'reddit')}\n\n#shorts #reddit #story",
                 "categoryId": "24", # Entertainment
-                "tags": ["reddit", "story", "shorts", post_data.get('subreddit')]
+                "tags": ["reddit", "story", "shorts", "#short", "#redditetory","#stories", "#shortstories", post_data.get('subreddit')]
             },
             "status": {
                 "privacyStatus": "public",
