@@ -2,7 +2,7 @@ name: Generate Reddit Video
 
 on:
   schedule:
-    - cron: '0 * * * *'   # every hour
+    - cron: '23 * * * *'   # every hour
   workflow_dispatch:      # manual trigger from GitHub UI
 
 jobs:
