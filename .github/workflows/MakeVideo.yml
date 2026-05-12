@@ -83,9 +83,9 @@ jobs:
       - name: Generate TTS + captions
         run: python scripts/generate_tts.py
 
-      # ── 5.5 Create Reddit Visual Card ──
-      - name: Create Reddit Card
-        run: python scripts/make_card.py
+      # ── 5.5 Download fonts ──
+      - name: Download Fonts
+        run: python scripts/get_fonts.py
 
       # ── 6. Setup FFmpeg (Cached, super fast) ──
       - name: Setup FFmpeg
@@ -107,10 +107,8 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: mark post as seen [skip ci]"
           git push
 
-      # ── 9. Upload output.mp4 as artifact (for testing) ──
-      - name: Upload video artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: reddit-video-${{ github.run_number }}
-          path: output.mp4
-          retention-days: 7
+      # ── 9. Upload output.mp4 to youtube ──
+      - name: Upload to YouTube
+        env:
+          YOUTUBE_CREDENTIALS: ${{ secrets.YOUTUBE_CREDENTIALS }}
+        run: python scripts/upload_yt.py

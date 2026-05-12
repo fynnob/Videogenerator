@@ -32,11 +32,9 @@ def build_video():
     start_chunk       = all_chunks[start_chunk_index]
     chunk_duration    = get_duration(start_chunk)
 
-    # Pick a random start point, leaving at least 10s of buffer
+    # Pick a random start point
     max_start = max(0, chunk_duration - 10)
     start_offset = round(random.uniform(0, max_start), 2)
-
-    print(f"📍 Starting at {start_chunk} offset {start_offset:.1f}s")
 
     num_chunks = len(all_chunks)
     ordered_chunks = [
@@ -46,13 +44,10 @@ def build_video():
 
     selected = []
     total    = 0.0
-
-    # Handle the first partial chunk
     first_available = chunk_duration - start_offset
     selected.append((ordered_chunks[0], start_offset))
     total += first_available
 
-    # Cycle through chunks until the audio is fully covered
     chunk_cycle_index = 1
     while total < audio_duration:
         chunk = ordered_chunks[chunk_cycle_index % num_chunks]
@@ -61,70 +56,45 @@ def build_video():
         total += dur
         chunk_cycle_index += 1
 
-    print(f"🎞️  Stitching {len(selected)} chunk(s) to cover {total:.1f}s of footage")
-
     # 3. Concatenation Process
-    # Trim the first chunk to the starting offset
     first_chunk_path, offset = selected[0]
     subprocess.run([
-        "ffmpeg", "-y",
-        "-ss", str(offset),
-        "-i", first_chunk_path,
-        "-c", "copy",
-        "first_part.mp4"
+        "ffmpeg", "-y", "-ss", str(offset), "-i", first_chunk_path,
+        "-c", "copy", "first_part.mp4"
     ], check=True)
 
-    # Build the concat list for FFmpeg
     with open("concat_list.txt", "w") as f:
         f.write(f"file '{os.path.abspath('first_part.mp4')}'\n")
         for chunk_path, _ in selected[1:]:
             f.write(f"file '{os.path.abspath(chunk_path)}'\n")
 
-    # Merge video chunks into one raw file
     subprocess.run([
         "ffmpeg", "-y", "-f", "concat", "-safe", "0",
-        "-i", "concat_list.txt",
-        "-c", "copy", "raw_video.mp4"
+        "-i", "concat_list.txt", "-c", "copy", "raw_video.mp4"
     ], check=True)
 
-    # 4. Final Composition (Card, Subtitles, Audio)
+    # 4. Final Composition (Clean Video + Audio + Captions)
     
-    # Custom Subtitle Styling (Roboto Bold, Shadow, High Positioning)
+    # 🔧 Subtitle Styling (Roboto, Larger Font, moved up for Shorts UI)
     subtitle_style = (
-        "FontName=Roboto,FontSize=22,PrimaryColour=&H00FFFFFF,"
+        "FontName=Roboto-Bold,FontSize=24,PrimaryColour=&H00FFFFFF,"
         "OutlineColour=&H00000000,Outline=2.5,BackColour=&H80000000,"
-        "Shadow=1.5,Bold=1,Alignment=2,MarginV=80"
+        "Shadow=1.5,Bold=1,Alignment=2,MarginV=120"
     )
     
     if not os.path.exists(SUBS_FILE) or os.path.getsize(SUBS_FILE) == 0:
         raise ValueError(f"❌ Subtitle file '{SUBS_FILE}' is missing or empty!")
 
-    subs_filter_path = f"./{SUBS_FILE}"
-
-    # Read the dynamic title end-time from the TTS script
-    title_duration = 4.0
-    if os.path.exists("title_duration.txt"):
-        with open("title_duration.txt", "r") as f:
-            title_duration = float(f.read().strip())
-            
-    print(f"📺 Displaying Reddit Card for the first {title_duration} seconds.")
-
-    # The Final FFmpeg Render
+    # The Final FFmpeg Render (No Card)
     subprocess.run([
         "ffmpeg", "-y",
         "-i", "raw_video.mp4",
         "-i", AUDIO_FILE,
-        "-i", "card.png", 
         "-t", str(audio_duration),
-        "-filter_complex", 
-        # Layer 1: Overlay the card over the video for title_duration
-        f"[0:v][2:v]overlay=(W-w)/2:(H-h)/2:enable='between(t,0,{title_duration})'[with_card];"
-        # Layer 2: Burn subtitles using Roboto font from local directory
-        f"[with_card]subtitles=filename='{subs_filter_path}':fontsdir='.':force_style='{subtitle_style}'[final_v]",
-        "-map", "[final_v]", 
-        "-map", "1:a:0",
+        "-vf", f"subtitles=filename='./{SUBS_FILE}':fontsdir='.':force_style='{subtitle_style}'",
         "-c:v", "libx264", "-crf", "23", "-preset", "ultrafast",
         "-c:a", "aac", "-b:a", "128k",
+        "-map", "0:v:0", "-map", "1:a:0",
         "-shortest",
         OUTPUT
     ], check=True)

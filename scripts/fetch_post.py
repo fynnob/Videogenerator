@@ -10,6 +10,7 @@ import random
 from datetime import datetime
 
 # --- Config ---
+# I added a few more story-heavy subreddits to give you more variety
 SUBREDDITS = [
     "AmItheAsshole",
     "tifu",
@@ -17,20 +18,22 @@ SUBREDDITS = [
     "confession",
     "offmychest",
     "relationship_advice",
+    "stories",
+    "LifeProTips",
+    "AskReddit" 
 ]
+
 MIN_WORDS   = 150
 MAX_WORDS   = 400
 SEEN_FILE   = "seen_posts.json"
 
 HEADERS = {
-    # Using a generic browser User-Agent often helps with RSS fetching
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
 # ---------------------------------------------------------------------------
-# Text cleanup — expand Reddit shorthand so TTS sounds natural
+# Text cleanup — expanding shorthand so the AI voice sounds natural
 # ---------------------------------------------------------------------------
-
 REPLACEMENTS = [
     (r"\bAITA\b",           "Am I the asshole"),
     (r"\baita\b",           "am I the asshole"),
@@ -118,35 +121,17 @@ def clean_text(text):
         text = re.sub(pattern, replacement, text)
     return text.strip()
 
-# ---------------------------------------------------------------------------
-# Gender detection for voice selection
-# ---------------------------------------------------------------------------
-
 def detect_gender(text):
     text_lower = text.lower()
-    female_signals = ["my husband", "my boyfriend", "my brother", "my dad",
-                      "my father", "my son", "my male", "my boy"]
-    male_signals   = ["my wife", "my girlfriend", "my sister", "my mom",
-                      "my mother", "my daughter", "my female", "my girl"]
-    female_score = sum(1 for s in female_signals if s in text_lower)
-    male_score   = sum(1 for s in male_signals   if s in text_lower)
-    if female_score > male_score:
-        return "female"
-    elif male_score > female_score:
-        return "male"
-    return None
+    female_signals = ["my husband", "my boyfriend", "my brother", "my dad", "my father", "my son", "my male", "my boy"]
+    male_signals   = ["my wife", "my girlfriend", "my sister", "my mom", "my mother", "my daughter", "my female", "my girl"]
+    f_score = sum(1 for s in female_signals if s in text_lower)
+    m_score = sum(1 for s in male_signals if s in text_lower)
+    return "female" if f_score > m_score else "male" if m_score > f_score else None
 
 def pick_voice(text):
     gender = detect_gender(text)
-    if gender == "female":
-        return "en-US-JennyNeural"
-    elif gender == "male":
-        return "en-US-GuyNeural"
-    return random.choice(["en-US-GuyNeural", "en-US-JennyNeural"])
-
-# ---------------------------------------------------------------------------
-# Seen posts state
-# ---------------------------------------------------------------------------
+    return "en-US-JennyNeural" if gender == "female" else "en-US-GuyNeural" if gender == "male" else random.choice(["en-US-GuyNeural", "en-US-JennyNeural"])
 
 def load_seen():
     if os.path.exists(SEEN_FILE):
@@ -154,61 +139,46 @@ def load_seen():
             return json.load(f)
     return {"seen_ids": [], "videos": []}
 
-# ---------------------------------------------------------------------------
-# Reddit RSS fetching (No API key needed)
-# ---------------------------------------------------------------------------
-
 def fetch_subreddit_rss(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/hot.rss?limit=50"
     req = urllib.request.Request(url, headers=HEADERS)
-    
-    try:
-        with urllib.request.urlopen(req, timeout=10) as response:
-            xml_data = response.read()
-            return ET.fromstring(xml_data)
-    except urllib.error.URLError as e:
-        raise Exception(f"Failed to fetch {url}: {e}")
+    with urllib.request.urlopen(req, timeout=10) as response:
+        return ET.fromstring(response.read())
 
 def fetch_best_post():
     seen_data = load_seen()
     seen_ids  = set(seen_data["seen_ids"])
-    ns = {'atom': 'http://www.w3.org/2005/Atom'} # Reddit RSS uses the Atom namespace
+    ns = {'atom': 'http://www.w3.org/2005/Atom'}
 
-    for subreddit in SUBREDDITS:
-        print(f"🔍 Checking r/{subreddit} (RSS)...")
+    # 🔧 RANDOMIZER: Shuffle the list so we check subreddits in a random order
+    random_subs = SUBREDDITS.copy()
+    random.shuffle(random_subs)
+
+    for subreddit in random_subs:
+        print(f"🔍 Checking r/{subreddit}...")
         try:
             root = fetch_subreddit_rss(subreddit)
         except Exception as e:
-            print(f"   ⚠️  Failed to fetch r/{subreddit}: {e}")
+            print(f"   ⚠️  Failed to fetch: {e}")
             continue
 
         for entry in root.findall('atom:entry', ns):
-            # 1. Get Link & Post ID
             link_node = entry.find('atom:link', ns)
             post_link = link_node.attrib.get('href', '') if link_node is not None else ""
-            
             post_id_match = re.search(r'/comments/([^/]+)/', post_link)
             post_id = post_id_match.group(1) if post_id_match else post_link
             
             if post_id in seen_ids or not post_id:
                 continue
 
-            # 2. Get Title
             title_node = entry.find('atom:title', ns)
             raw_title = title_node.text if title_node is not None else ""
-
-            # 3. Get Content
             content_node = entry.find('atom:content', ns)
-            if content_node is None:
-                continue
+            if content_node is None: continue
                 
-            raw_html = content_node.text or ""
-            
-            # Unescape HTML entities and strip HTML tags to get raw text
-            raw_text = html.unescape(raw_html)
+            # RSS Cleanup logic
+            raw_text = html.unescape(content_node.text or "")
             raw_text = re.sub(r'<[^>]+>', ' ', raw_text)
-            
-            # Clean up the RSS boilerplate ("submitted by /u/user [link] [comments]")
             raw_text = re.sub(r'submitted by\s*/u/[\w-]+\s*', '', raw_text, flags=re.IGNORECASE)
             raw_text = raw_text.replace('[link]', '').replace('[comments]', '').strip()
 
@@ -216,7 +186,7 @@ def fetch_best_post():
             if word_count < MIN_WORDS or word_count > MAX_WORDS:
                 continue
 
-            # Clean text for TTS
+            # 🔧 CONVERSION: Clean and expand shorthand
             clean_title = clean_text(raw_title)
             clean_body  = clean_text(raw_text)
             voice       = pick_voice(clean_body)
@@ -225,9 +195,7 @@ def fetch_best_post():
                 "id":          post_id,
                 "title":       clean_title,
                 "text":        clean_body,
-                "raw_title":   raw_title,
                 "subreddit":   subreddit,
-                "score":       "N/A (RSS)", 
                 "voice":       voice,
                 "word_count":  word_count,
                 "fetched_at":  datetime.utcnow().isoformat(),
@@ -236,11 +204,10 @@ def fetch_best_post():
             with open("post.json", "w") as f:
                 json.dump(result, f, indent=2)
 
-            print(f"✅ Found: {clean_title[:60]}...")
-            print(f"   r/{subreddit} | Words: {word_count} | Voice: {voice}")
+            print(f"✅ Found Post: {clean_title[:50]}... in r/{subreddit}")
             return result
 
-    print("❌ No suitable posts found this run.")
+    print("❌ No new posts found.")
     sys.exit(1)
 
 if __name__ == "__main__":
