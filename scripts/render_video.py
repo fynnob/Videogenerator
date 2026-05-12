@@ -4,6 +4,7 @@ import os
 import glob
 import random
 
+# --- CONFIGURATION ---
 CHUNKS_DIR = "chunks"
 AUDIO_FILE = "audio.mp3"
 SUBS_FILE  = "captions.srt"
@@ -20,6 +21,9 @@ def get_duration(filepath):
 
 def build_video():
     # 1. Initialize Durations
+    if not os.path.exists(AUDIO_FILE):
+        raise FileNotFoundError(f"❌ Audio file '{AUDIO_FILE}' not found!")
+        
     audio_duration = get_duration(AUDIO_FILE)
     print(f"🎬 Audio duration: {audio_duration:.1f}s")
 
@@ -32,7 +36,7 @@ def build_video():
     start_chunk       = all_chunks[start_chunk_index]
     chunk_duration    = get_duration(start_chunk)
 
-    # Pick a random start point
+    # Pick a random start point within the first chunk
     max_start = max(0, chunk_duration - 10)
     start_offset = round(random.uniform(0, max_start), 2)
 
@@ -75,17 +79,24 @@ def build_video():
 
     # 4. Final Composition (Clean Video + Audio + Captions)
     
-    # 🔧 Subtitle Styling (Roboto, Larger Font, moved up for Shorts UI)
+    # 🔧 Subtitle Styling Breakdown:
+    # FontName: Roboto-Bold (Ensure this is in your fonts folder)
+    # FontSize=12: Small text as requested.
+    # PrimaryColour=&H00FFFFFF: White text.
+    # Outline=1.5 / Shadow=1: Thinner outlines for smaller font sizes.
+    # Alignment=2: Bottom-Center.
+    # MarginV=640: Moves text roughly 2/3 down (1/3 up from the bottom).
+    # MarginL=100 / MarginR=100: Keeps text 100px away from the edges.
     subtitle_style = (
-        "FontName=Roboto-Bold,FontSize=24,PrimaryColour=&H00FFFFFF,"
-        "OutlineColour=&H00000000,Outline=2.5,BackColour=&H80000000,"
-        "Shadow=1.5,Bold=1,Alignment=2,MarginV=120"
+        "FontName=Roboto-Bold,FontSize=12,PrimaryColour=&H00FFFFFF,"
+        "OutlineColour=&H00000000,Outline=1.5,BackColour=&H80000000,"
+        "Shadow=1,Bold=1,Alignment=2,MarginV=640,MarginL=100,MarginR=100"
     )
     
     if not os.path.exists(SUBS_FILE) or os.path.getsize(SUBS_FILE) == 0:
         raise ValueError(f"❌ Subtitle file '{SUBS_FILE}' is missing or empty!")
 
-    # The Final FFmpeg Render (No Card)
+    # The Final FFmpeg Render
     subprocess.run([
         "ffmpeg", "-y",
         "-i", "raw_video.mp4",
@@ -98,6 +109,11 @@ def build_video():
         "-shortest",
         OUTPUT
     ], check=True)
+
+    # Cleanup temp files
+    for temp_file in ["first_part.mp4", "raw_video.mp4", "concat_list.txt"]:
+        if os.path.exists(temp_file):
+            os.remove(temp_file)
 
     print(f"✅ FINAL VIDEO GENERATED: {OUTPUT}")
     return OUTPUT
