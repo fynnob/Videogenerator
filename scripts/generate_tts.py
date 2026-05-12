@@ -15,6 +15,10 @@ def ticks_to_ass(t_100ns):
     cs = int((s * 100) % 100)  # centiseconds
     return f"{h}:{m:02d}:{sec:02d}.{cs:02d}"
 
+# How many 100ns ticks to shave off the last word of each group.
+# 500ms = 5_000_000 ticks. Tune up/down if still drifting.
+END_OF_GROUP_PAUSE_TICKS = 5_000_000
+
 async def generate(text, voice, audio_out, subtitle_out):
     communicate = edge_tts.Communicate(text, voice)
     words = []
@@ -46,8 +50,6 @@ async def generate(text, voice, audio_out, subtitle_out):
                     })
 
     # --- Write ASS subtitle file ---
-    # ASS format supports colored/styled individual words properly
-    # White = &H00FFFFFF, Yellow = &H0000FFFF (ASS is BGR not RGB)
     ass_header = """\
 [Script Info]
 ScriptType: v4.00+
@@ -71,16 +73,20 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
         for j, active_word in enumerate(group):
             start_time = ticks_to_ass(active_word["offset"])
+
             if j < len(group) - 1:
+                # Not the last word in the group — next word's offset is the end, this is fine
                 end_time = ticks_to_ass(group[j + 1]["offset"])
             else:
-                end_time = ticks_to_ass(active_word["offset"] + active_word["duration"])
+                # Last word in the group: trim the pause that punctuation adds.
+                # Without this, the highlight sits too long and drifts behind the audio.
+                trimmed_duration = max(active_word["duration"] - END_OF_GROUP_PAUSE_TICKS, 100_000)
+                end_time = ticks_to_ass(active_word["offset"] + trimmed_duration)
 
             # Build line: highlighted word in yellow, rest in white
             line_parts = []
             for k, w in enumerate(group):
                 if k == j:
-                    # Yellow highlight for current word
                     line_parts.append(r"{\c&H0000FFFF&}" + w["text"] + r"{\c&H00FFFFFF&}")
                 else:
                     line_parts.append(w["text"])

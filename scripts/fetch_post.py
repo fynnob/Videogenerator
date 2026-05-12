@@ -10,7 +10,6 @@ import random
 from datetime import datetime
 
 # --- Config ---
-# I added a few more story-heavy subreddits to give you more variety
 SUBREDDITS = [
     "AmItheAsshole",
     "tifu",
@@ -20,7 +19,7 @@ SUBREDDITS = [
     "relationship_advice",
     "stories",
     "LifeProTips",
-    "AskReddit" 
+    "AskReddit"
 ]
 
 MIN_WORDS   = 150
@@ -30,6 +29,222 @@ SEEN_FILE   = "seen_posts.json"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
+
+# ---------------------------------------------------------------------------
+# YouTube / Google AdSense Content Policy Filter
+# Blocks posts containing content that violates YouTube's advertiser-friendly
+# guidelines: sexual content, graphic violence, hate speech, drug promotion,
+# dangerous acts, self-harm, and more.
+# ---------------------------------------------------------------------------
+
+# Each category contains (pattern, reason) tuples.
+# Patterns use word boundaries (\b) where possible to reduce false positives.
+
+BLOCKED_PATTERNS = {
+
+    "sexual_content": [
+        # Explicit acts / anatomy
+        (r"\bsex\b",                        "sexual content"),
+        (r"\bsexual\b",                     "sexual content"),
+        (r"\bsexually\b",                   "sexual content"),
+        (r"\bporn\b",                       "pornographic content"),
+        (r"\bpornograph",                   "pornographic content"),
+        (r"\bnude\b",                       "nudity"),
+        (r"\bnudes\b",                      "nudity"),
+        (r"\bnudity\b",                     "nudity"),
+        (r"\bnaked\b",                      "nudity"),
+        (r"\bbreasts?\b",                   "sexual content"),
+        (r"\bnipple",                       "sexual content"),
+        (r"\bpenis\b",                      "sexual content"),
+        (r"\bvagina\b",                     "sexual content"),
+        (r"\bgenitals?\b",                  "sexual content"),
+        (r"\banal\b",                       "sexual content"),
+        (r"\boral sex\b",                   "sexual content"),
+        (r"\bhooking up\b",                 "sexual content"),
+        (r"\bsleeping with\b",              "sexual content"),
+        (r"\bone.night stand\b",            "sexual content"),
+        (r"\bescort\b",                     "sexual content"),
+        (r"\bprostitut",                    "sexual content"),
+        (r"\bsexting\b",                    "sexual content"),
+        (r"\bsext\b",                       "sexual content"),
+        (r"\bfetish\b",                     "sexual content"),
+        (r"\bkink\b",                       "sexual content"),
+        (r"\bbdsm\b",                       "sexual content"),
+        (r"\bstrip club\b",                 "sexual content"),
+        (r"\bstriptease\b",                 "sexual content"),
+        (r"\bonlyfans\b",                   "sexual content"),
+        (r"\bcheating on\b",                "sexual content"),  # relationship cheating implying sex
+        (r"\baffair\b",                     "sexual content"),
+        (r"\binfidelity\b",                 "sexual content"),
+        (r"\bslept with\b",                 "sexual content"),
+        (r"\bhad sex\b",                    "sexual content"),
+        (r"\bmasturbat",                    "sexual content"),
+    ],
+
+    "graphic_violence": [
+        (r"\bmurder\b",                     "graphic violence"),
+        (r"\bmurdered\b",                   "graphic violence"),
+        (r"\bkilled\b",                     "graphic violence"),
+        (r"\bkilling\b",                    "graphic violence"),
+        (r"\bstabbed\b",                    "graphic violence"),
+        (r"\bstabbing\b",                   "graphic violence"),
+        (r"\bshooting\b",                   "graphic violence"),
+        (r"\bshot\b",                       "graphic violence"),
+        (r"\bgunshot\b",                    "graphic violence"),
+        (r"\bblood\b",                      "graphic violence"),
+        (r"\bbloody\b",                     "graphic violence"),
+        (r"\bbeat.?up\b",                   "graphic violence"),
+        (r"\bbeaten\b",                     "graphic violence"),
+        (r"\bbeating\b",                    "graphic violence"),
+        (r"\bbrutally\b",                   "graphic violence"),
+        (r"\btorture\b",                    "graphic violence"),
+        (r"\btortured\b",                   "graphic violence"),
+        (r"\bfight\b",                      "graphic violence"),   # common but kept for safety
+        (r"\bgore\b",                       "graphic violence"),
+        (r"\bmutilat",                      "graphic violence"),
+        (r"\bdecapitat",                    "graphic violence"),
+        (r"\bassault\b",                    "graphic violence"),
+        (r"\bassaulted\b",                  "graphic violence"),
+        (r"\bchoked\b",                     "graphic violence"),
+        (r"\bchoking\b",                    "graphic violence"),
+        (r"\bstrangled\b",                  "graphic violence"),
+        (r"\bstrangling\b",                 "graphic violence"),
+        (r"\babuse\b",                      "graphic violence / abuse"),
+        (r"\babused\b",                     "graphic violence / abuse"),
+        (r"\bdomestic violence\b",          "graphic violence / abuse"),
+    ],
+
+    "self_harm_suicide": [
+        (r"\bsuicid",                       "self-harm / suicide"),
+        (r"\bself.?harm",                   "self-harm"),
+        (r"\bcut.?myself\b",                "self-harm"),
+        (r"\bkill.?myself\b",               "self-harm / suicide"),
+        (r"\bwant.?to die\b",               "self-harm / suicide"),
+        (r"\bending.?my life\b",            "self-harm / suicide"),
+        (r"\boverdos",                       "self-harm / suicide"),
+        (r"\bhanged.?myself\b",             "self-harm / suicide"),
+        (r"\bjumped.?off\b",                "self-harm / suicide"),
+        (r"\beating disorder\b",            "self-harm"),
+        (r"\banorexia\b",                   "self-harm"),
+        (r"\bbulimia\b",                    "self-harm"),
+    ],
+
+    "hate_speech": [
+        (r"\bracist\b",                     "hate speech"),
+        (r"\bracism\b",                     "hate speech"),
+        (r"\bhate.?speech\b",               "hate speech"),
+        (r"\bwhite supremac",               "hate speech"),
+        (r"\bneo.?nazi\b",                  "hate speech"),
+        (r"\bantisemit",                    "hate speech"),
+        (r"\bislam[o]?phob",                "hate speech"),
+        (r"\bhomophob",                     "hate speech"),
+        (r"\btransphob",                    "hate speech"),
+        (r"\bslur\b",                       "hate speech"),
+        # Hard-coded slurs — pattern only, no readable word stored here
+        (r"\bn[i!1]gg",                     "hate speech / slur"),
+        (r"\bf[a@]gg[o0]t",                "hate speech / slur"),
+        (r"\br[e3]tard",                    "hate speech / slur"),
+    ],
+
+    "drugs_and_alcohol": [
+        (r"\bdrug dealer\b",                "drug promotion"),
+        (r"\bdealing drugs\b",              "drug promotion"),
+        (r"\bcocaine\b",                    "drug promotion"),
+        (r"\bheroin\b",                     "drug promotion"),
+        (r"\bmeth\b",                       "drug promotion"),
+        (r"\bcrack\b",                      "drug promotion"),
+        (r"\bfentanyl\b",                   "drug promotion"),
+        (r"\bpills?\b",                     "drug promotion"),   # broad but flags common abuse context
+        (r"\bgetting high\b",               "drug promotion"),
+        (r"\bgot high\b",                   "drug promotion"),
+        (r"\bweed\b",                       "drug promotion"),
+        (r"\bmarijuana\b",                  "drug promotion"),
+        (r"\bshrooms?\b",                   "drug promotion"),
+        (r"\btripping\b",                   "drug promotion"),
+        (r"\bblacked out\b",                "alcohol / drug abuse"),
+        (r"\bgot drunk\b",                  "alcohol abuse"),
+        (r"\bdrinking problem\b",           "alcohol abuse"),
+        (r"\balcoholic\b",                  "alcohol abuse"),
+    ],
+
+    "dangerous_activities": [
+        (r"\bbomb\b",                       "dangerous activity"),
+        (r"\bexplosive\b",                  "dangerous activity"),
+        (r"\bweapon\b",                     "dangerous activity"),
+        (r"\bgun\b",                        "dangerous activity"),
+        (r"\bfirearm\b",                    "dangerous activity"),
+        (r"\bhack\b",                       "dangerous activity"),
+        (r"\bstalking\b",                   "dangerous activity / harassment"),
+        (r"\bstalked\b",                    "dangerous activity / harassment"),
+        (r"\bscam\b",                       "dangerous activity / fraud"),
+        (r"\bfraud\b",                      "dangerous activity / fraud"),
+        (r"\bblackmail\b",                  "dangerous activity"),
+        (r"\bextort",                       "dangerous activity"),
+        (r"\bthreaten",                     "dangerous activity"),
+        (r"\bterror",                       "dangerous activity"),
+    ],
+
+    "minors_safety": [
+        (r"\bminor\b",                      "minor safety"),
+        (r"\bchild.?abuse\b",               "minor safety"),
+        (r"\bpedophil",                     "minor safety"),
+        (r"\bunderaged?\b",                 "minor safety"),
+        (r"\b13.?year.?old\b",              "minor safety"),
+        (r"\b14.?year.?old\b",              "minor safety"),
+        (r"\b15.?year.?old\b",              "minor safety"),
+        (r"\b16.?year.?old\b",              "minor safety"),
+        (r"\b17.?year.?old\b",              "minor safety"),
+        (r"\bteenager.*sexual\b",           "minor safety"),
+        (r"\bchild.*sexual\b",              "minor safety"),
+    ],
+
+    "profanity_heavy": [
+        # Only the most egregious; mild swearing is not blocked by YouTube
+        (r"\bf\*+ck",                       "heavy profanity"),
+        (r"\bfuck\b",                       "heavy profanity"),
+        (r"\bfucking\b",                    "heavy profanity"),
+        (r"\bsh[i!1]t\b",                   "heavy profanity"),
+        (r"\bbitch\b",                      "heavy profanity"),
+        (r"\bass.?hole\b",                  "heavy profanity"),
+        (r"\bcock\b",                       "heavy profanity"),
+        (r"\bdick\b",                       "heavy profanity"),
+        (r"\bcunt\b",                       "heavy profanity"),
+        (r"\bpussy\b",                      "heavy profanity"),
+        (r"\bbastard\b",                    "heavy profanity"),
+        (r"\bdamn\b",                       "heavy profanity"),   # mild; remove if too aggressive
+    ],
+}
+
+# Subreddits that are almost always NSFW / adult — skip entirely
+BLOCKED_SUBREDDITS = {
+    "sex",
+    "nsfw",
+    "gonewild",
+    "adultery",
+    "survivorsofabuse",
+    "rape",
+    "depression",
+    "suicidewatch",
+    "darkjokes",
+}
+
+
+def is_youtube_safe(title: str, body: str) -> tuple[bool, str]:
+    """
+    Returns (True, "") if the post passes all filters.
+    Returns (False, reason) if a violation is found.
+
+    Checks both title and body against every category of blocked patterns.
+    """
+    combined = (title + " " + body).lower()
+
+    for category, patterns in BLOCKED_PATTERNS.items():
+        for pattern, reason in patterns:
+            if re.search(pattern, combined, re.IGNORECASE):
+                return False, f"[{category}] matched '{reason}' (pattern: {pattern})"
+
+    return True, ""
+
 
 # ---------------------------------------------------------------------------
 # Text cleanup — expanding shorthand so the AI voice sounds natural
@@ -103,11 +318,11 @@ REPLACEMENTS = [
     (r"\btl;dr\b",          "to summarize"),
     (r"\bTLDR\b",           "to summarize"),
     (r"\btldr\b",           "to summarize"),
-    (r"\*\*(.+?)\*\*",      r"\1"),   
-    (r"\*(.+?)\*",          r"\1"),   
-    (r"\_(.+?)\_",          r"\1"),   
-    (r"~~(.+?)~~",          r"\1"),   
-    (r"`(.+?)`",            r"\1"),   
+    (r"\*\*(.+?)\*\*",      r"\1"),
+    (r"\*(.+?)\*",          r"\1"),
+    (r"\_(.+?)\_",          r"\1"),
+    (r"~~(.+?)~~",          r"\1"),
+    (r"`(.+?)`",            r"\1"),
     (r"&amp;",              "and"),
     (r"&lt;",               "less than"),
     (r"&gt;",               "greater than"),
@@ -150,11 +365,17 @@ def fetch_best_post():
     seen_ids  = set(seen_data["seen_ids"])
     ns = {'atom': 'http://www.w3.org/2005/Atom'}
 
-    # 🔧 RANDOMIZER: Shuffle the list so we check subreddits in a random order
     random_subs = SUBREDDITS.copy()
     random.shuffle(random_subs)
 
+    filtered_count = 0  # track how many posts were blocked for reporting
+
     for subreddit in random_subs:
+        # Skip entire subreddits that are inherently adult/unsafe
+        if subreddit.lower() in BLOCKED_SUBREDDITS:
+            print(f"⛔ Skipping blocked subreddit: r/{subreddit}")
+            continue
+
         print(f"🔍 Checking r/{subreddit}...")
         try:
             root = fetch_subreddit_rss(subreddit)
@@ -167,15 +388,16 @@ def fetch_best_post():
             post_link = link_node.attrib.get('href', '') if link_node is not None else ""
             post_id_match = re.search(r'/comments/([^/]+)/', post_link)
             post_id = post_id_match.group(1) if post_id_match else post_link
-            
+
             if post_id in seen_ids or not post_id:
                 continue
 
             title_node = entry.find('atom:title', ns)
             raw_title = title_node.text if title_node is not None else ""
             content_node = entry.find('atom:content', ns)
-            if content_node is None: continue
-                
+            if content_node is None:
+                continue
+
             # RSS Cleanup logic
             raw_text = html.unescape(content_node.text or "")
             raw_text = re.sub(r'<[^>]+>', ' ', raw_text)
@@ -186,28 +408,41 @@ def fetch_best_post():
             if word_count < MIN_WORDS or word_count > MAX_WORDS:
                 continue
 
-            # 🔧 CONVERSION: Clean and expand shorthand
+            # ---------------------------------------------------------------
+            # 🛡️ YOUTUBE CONTENT POLICY FILTER
+            # Run BEFORE cleaning so raw text is checked (catches more cases)
+            # ---------------------------------------------------------------
+            safe, reason = is_youtube_safe(raw_title, raw_text)
+            if not safe:
+                filtered_count += 1
+                print(f"   🚫 Filtered post ({reason}): {raw_title[:60]}")
+                continue
+            # ---------------------------------------------------------------
+
+            # Clean and expand shorthand AFTER the safety check passes
             clean_title = clean_text(raw_title)
             clean_body  = clean_text(raw_text)
             voice       = pick_voice(clean_body)
 
             result = {
-                "id":          post_id,
-                "title":       clean_title,
-                "text":        clean_body,
-                "subreddit":   subreddit,
-                "voice":       voice,
-                "word_count":  word_count,
-                "fetched_at":  datetime.utcnow().isoformat(),
+                "id":             post_id,
+                "title":          clean_title,
+                "text":           clean_body,
+                "subreddit":      subreddit,
+                "voice":          voice,
+                "word_count":     word_count,
+                "fetched_at":     datetime.utcnow().isoformat(),
+                "posts_filtered": filtered_count,   # useful for debugging
             }
 
             with open("post.json", "w") as f:
                 json.dump(result, f, indent=2)
 
             print(f"✅ Found Post: {clean_title[:50]}... in r/{subreddit}")
+            print(f"   (Filtered {filtered_count} unsafe post(s) before finding this one)")
             return result
 
-    print("❌ No new posts found.")
+    print(f"❌ No new posts found. (Filtered {filtered_count} unsafe posts total)")
     sys.exit(1)
 
 if __name__ == "__main__":
