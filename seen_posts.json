@@ -1,7 +1,8 @@
 {
   "seen_ids": [
     "1sbvqu5",
-    "1ta73kq"
+    "1ta73kq",
+    "1j8q472"
   ],
   "videos": [
     {
@@ -19,6 +20,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A (RSS)",
       "made_at": "2026-05-11T23:11:35.819224"
+    },
+    {
+      "post_id": "1j8q472",
+      "title": "My Girlfreind's Ultimate Betrayal: How I Found Out She Was Cheating With 4 Guys",
+      "subreddit": "stories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-12T00:47:04.077414"
     }
   ]
 }
