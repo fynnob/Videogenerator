@@ -80,7 +80,7 @@ def build_video():
     # 4. Final Composition (Clean Video + Audio + Captions)
     
     # 🔧 Subtitle Styling Breakdown:
-    # FontName: Roboto-Bold (Ensure this is in your fonts folder)
+    # FontName: DejaVu Sans (Ensure this is in your fonts folder)
     # FontSize=12: Small text as requested.
     # PrimaryColour=&H00FFFFFF: White text.
     # Outline=1.5 / Shadow=1: Thinner outlines for smaller font sizes.
@@ -88,7 +88,7 @@ def build_video():
     # MarginV=640: Moves text roughly 2/3 down (1/3 up from the bottom).
     # MarginL=100 / MarginR=100: Keeps text 100px away from the edges.
     subtitle_style = (
-        "FontName=Roboto-Bold,FontSize=12,PrimaryColour=&H00FFFFFF,"
+        "FontName=DejaVu Sans,FontSize=12,PrimaryColour=&H00FFFFFF,"
         "OutlineColour=&H00000000,Outline=1.5,BackColour=&H80000000,"
         "Shadow=1,Bold=1,Alignment=2,MarginV=640,MarginL=100,MarginR=100"
     )
