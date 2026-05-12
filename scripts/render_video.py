@@ -102,7 +102,7 @@ def build_video():
         "-i", "raw_video.mp4",
         "-i", AUDIO_FILE,
         "-t", str(audio_duration),
-        "-vf", f"subtitles=filename='./{SUBS_FILE}':fontsdir='.':force_style='{subtitle_style}'",
+        "-vf", f"ass='{abs_subs}'",
         "-c:v", "libx264", "-crf", "23", "-preset", "ultrafast",
         "-c:a", "aac", "-b:a", "128k",
         "-map", "0:v:0", "-map", "1:a:0",
