@@ -96,6 +96,9 @@ def build_video():
     if not os.path.exists(SUBS_FILE) or os.path.getsize(SUBS_FILE) == 0:
         raise ValueError(f"❌ Subtitle file '{SUBS_FILE}' is missing or empty!")
 
+    # Fix: Get the absolute path for the subtitle file to ensure FFmpeg finds it
+    abs_subs = os.path.abspath(SUBS_FILE)
+
     # The Final FFmpeg Render
     subprocess.run([
         "ffmpeg", "-y",
