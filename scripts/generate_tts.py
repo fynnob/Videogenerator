@@ -16,47 +16,24 @@ def ticks_to_ass(t_100ns):
     return f"{h}:{m:02d}:{sec:02d}.{cs:02d}"
 
 def spoken_len(word):
-    """Letter count excluding trailing punctuation."""
     return max(len(re.sub(r"[^a-zA-Z0-9']", "", word)), 1)
 
 def is_punctuation_only(word):
     return bool(re.match(r"^[^a-zA-Z0-9']+$", word))
 
-END_OF_GROUP_PAUSE_TICKS = 5_000_000
-
 def split_chunk_into_words(text_chunk, offset, duration):
-    """
-    Split a multi-word chunk into timed words.
-    Punctuation at the end of a word (like the dot in 'blah.')
-    has no sound — its time is absorbed into the word before it,
-    not spread across all words equally.
-    """
     sub_words = text_chunk.split()
     if not sub_words:
         return []
-
-    # Calculate spoken length for each word (no punctuation)
     spoken_lengths = [spoken_len(w) for w in sub_words]
     total_spoken   = sum(spoken_lengths)
-
-    # Distribute duration proportionally by spoken length only
     word_durations = [int(duration * (sl / total_spoken)) for sl in spoken_lengths]
-
-    # Fix rounding so total matches exactly
-    diff = duration - sum(word_durations)
-    word_durations[-1] += diff
-
-    # Build words list
+    word_durations[-1] += duration - sum(word_durations)
     result = []
     current_offset = offset
     for w, dur in zip(sub_words, word_durations):
-        result.append({
-            "text":     w,
-            "offset":   current_offset,
-            "duration": dur
-        })
+        result.append({"text": w, "offset": current_offset, "duration": dur})
         current_offset += dur
-
     return result
 
 async def generate(text, voice, audio_out, subtitle_out):
@@ -71,7 +48,6 @@ async def generate(text, voice, audio_out, subtitle_out):
                 text_chunk = chunk["text"].strip()
                 if not text_chunk:
                     continue
-
                 if " " in text_chunk:
                     words.extend(split_chunk_into_words(
                         text_chunk, chunk["offset"], chunk["duration"]
@@ -83,10 +59,8 @@ async def generate(text, voice, audio_out, subtitle_out):
                         "duration": chunk["duration"]
                     })
 
-    # Remove any punctuation-only tokens (e.g. a lone "." returned as its own chunk)
     words = [w for w in words if not is_punctuation_only(w["text"])]
 
-    # --- Write ASS subtitle file ---
     ass_header = """\
 [Script Info]
 ScriptType: v4.00+
@@ -105,18 +79,21 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     WORDS_PER_SCREEN = 6
     ass_events = ""
 
-    for i in range(0, len(words), WORDS_PER_SCREEN):
-        group = words[i:i + WORDS_PER_SCREEN]
+    groups = [words[i:i + WORDS_PER_SCREEN] for i in range(0, len(words), WORDS_PER_SCREEN)]
 
-        last_word   = group[-1]
-        trimmed_end = last_word["offset"] + max(
-            last_word["duration"] - END_OF_GROUP_PAUSE_TICKS, 100_000
-        )
+    for g, group in enumerate(groups):
+        # End of this group = start of first word of next group (no gap)
+        # For the very last group, use the last word's own duration
+        if g < len(groups) - 1:
+            group_end = groups[g + 1][0]["offset"]
+        else:
+            group_end = group[-1]["offset"] + group[-1]["duration"]
 
         for j, active_word in enumerate(group):
             start_time = ticks_to_ass(active_word["offset"])
-            end_time   = ticks_to_ass(
-                group[j + 1]["offset"] if j < len(group) - 1 else trimmed_end
+            # Within a group: end = next word's start. Last word in group: end = group_end
+            end_time = ticks_to_ass(
+                group[j + 1]["offset"] if j < len(group) - 1 else group_end
             )
 
             line_parts = []
