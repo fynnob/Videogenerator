@@ -60,7 +60,7 @@ def split_chunk_into_words(text_chunk, offset, duration):
     return result
 
 async def generate(text, voice, audio_out, subtitle_out):
-    communicate = edge_tts.Communicate(text, voice)
+    communicate = edge_tts.Communicate(text, voice, rate="+20%")
     words = []
 
     with open(audio_out, "wb") as f:
