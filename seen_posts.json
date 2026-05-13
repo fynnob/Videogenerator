@@ -34,7 +34,8 @@
     "1tbtatf",
     "1tc08rx",
     "1tbw378",
-    "1t8w08a"
+    "1t8w08a",
+    "1tc7dm2"
   ],
   "videos": [
     {
@@ -316,6 +317,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-05-13T16:37:40.021265"
+    },
+    {
+      "post_id": "1tc7dm2",
+      "title": "Sometimes I imagine mornings where the first thing I see is your face, where your voice becomes the beginning of my day.",
+      "subreddit": "confession",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-13T19:14:40.780187"
     }
   ]
 }
