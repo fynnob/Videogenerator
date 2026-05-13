@@ -29,7 +29,8 @@
     "1tbirh3",
     "1tbmflt",
     "1tbqcec",
-    "1t7q74a"
+    "1t7q74a",
+    "1tbwnxq"
   ],
   "videos": [
     {
@@ -271,6 +272,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-13T10:47:45.303359"
+    },
+    {
+      "post_id": "1tbwnxq",
+      "title": "LPT: troubleshoot anything faster \u2014 write what you expected vs. what happened. the gap is the actual problem.",
+      "subreddit": "LifeProTips",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-13T13:34:01.604572"
     }
   ]
 }
