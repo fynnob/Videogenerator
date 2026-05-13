@@ -22,8 +22,8 @@ SUBREDDITS = [
     "AskReddit"
 ]
 
-MIN_WORDS   = 150
-MAX_WORDS   = 400
+MIN_WORDS   = 200
+MAX_WORDS   = 650
 SEEN_FILE   = "seen_posts.json"
 
 HEADERS = {
