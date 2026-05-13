@@ -33,7 +33,8 @@
     "1tbwnxq",
     "1tbtatf",
     "1tc08rx",
-    "1tbw378"
+    "1tbw378",
+    "1t8w08a"
   ],
   "videos": [
     {
@@ -307,6 +308,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-13T14:39:34.689215"
+    },
+    {
+      "post_id": "1t8w08a",
+      "title": "LPT: If you want to exercise but going to the gym is difficult for you, get resistance bands.",
+      "subreddit": "LifeProTips",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-13T16:37:40.021265"
     }
   ]
 }
