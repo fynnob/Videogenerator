@@ -145,4 +145,3 @@ if __name__ == "__main__":
         audio_out="audio.mp3",
         subtitle_out="captions.ass"
     ))
-_
