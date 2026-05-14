@@ -11,6 +11,15 @@ from datetime import datetime
 
 # --- Config ---
 SUBREDDITS = [
+    "BestofRedditorUpdates", # The one you just showed me! (Excellent for long form)
+    "ProRevenge",             # High word counts, usually 1000+
+    "MaliciousCompliance",    # Very detailed stories
+    "entitledparents",        # Long dialogues
+    "MilitaryStories",        # Very high word counts
+    "TalesFromTechSupport",   # Usually long and clean
+    "IDontWorkHereLady",      # Great story lengths
+    "legaladvice",            # Long, detailed explanations
+    "talesfromyourserver",    # Good rants
     "AmItheAsshole",
     "tifu",
     "TrueOffMyChest",
@@ -20,6 +29,10 @@ SUBREDDITS = [
     "stories",
     "AskReddit"
 ]
+SUBREDDITS = [
+    "
+]
+
 
 MIN_WORDS   = 1500
 MAX_WORDS   = 15000
