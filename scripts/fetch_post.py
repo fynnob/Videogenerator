@@ -18,12 +18,11 @@ SUBREDDITS = [
     "offmychest",
     "relationship_advice",
     "stories",
-    "LifeProTips",
     "AskReddit"
 ]
 
 MIN_WORDS   = 200
-MAX_WORDS   = 650
+MAX_WORDS   = 750
 SEEN_FILE   = "seen_posts.json"
 
 HEADERS = {
