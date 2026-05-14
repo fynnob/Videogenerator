@@ -11,15 +11,13 @@ from datetime import datetime
 
 # --- Config ---
 SUBREDDITS = [
-    "AmItheAsshole",
-    "tifu",
-    "TrueOffMyChest",
-    "confession",
-    "offmychest",
-    "relationship_advice",
-    "stories",
-    "AskReddit"
+    "AmItheAsshole", "tifu", "TrueOffMyChest", "confession", 
+    "offmychest", "relationship_advice", "stories", "AskReddit",
+    "entitledparents", "MaliciousCompliance", "ProRevenge", 
+    "talesfromtechsupport", "Divorce", "legaladvice", "PettyRevenge",
+    "PointlessStories",  "MilitaryStories", "IDontWorkHereLady"
 ]
+
 
 MIN_WORDS   = 200
 MAX_WORDS   = 750
@@ -354,7 +352,7 @@ def load_seen():
     return {"seen_ids": [], "videos": []}
 
 def fetch_subreddit_rss(subreddit):
-    url = f"https://www.reddit.com/r/{subreddit}/hot.rss?limit=50"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.rss?limit=100"
     req = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(req, timeout=10) as response:
         return ET.fromstring(response.read())
