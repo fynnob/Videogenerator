@@ -1,9 +1,12 @@
 name: Generate Reddit Video
 
 on:
-  schedule:
-    - cron: '23 * * * *'   # every hour
-  workflow_dispatch:      # manual trigger from GitHub UI
+  # This allows cron-job.org to trigger the high-compute job
+  repository_dispatch:
+    types: [manual-cron-trigger]
+
+  # This keeps your "Run workflow" button in the GitHub UI
+  workflow_dispatch:
 
 jobs:
   make-video:
