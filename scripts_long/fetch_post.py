@@ -29,9 +29,7 @@ SUBREDDITS = [
     "stories",
     "AskReddit"
 ]
-SUBREDDITS = [
-    "
-]
+
 
 
 MIN_WORDS   = 1500
