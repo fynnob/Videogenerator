@@ -1,0 +1,101 @@
+name: Generate Long Form Reddit Video
+
+on:
+  # This allows cron-job.org to trigger the high-compute job
+  repository_dispatch:
+    types: [manual-cron-trigger-long]
+
+  # This keeps your "Run workflow" button in the GitHub UI
+  workflow_dispatch:
+
+# 🔧 Added Concurrency: Prevents two long renders from running at the same time
+concurrency:
+  group: long-form-rendering
+  cancel-in-progress: false
+
+jobs:
+  make-video:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      # ── 1. Checkout repo ──
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Download latest release chunks via curl ──
+      # (This logic remains the same as it handles your background assets)
+      - name: Download chunks from latest release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p chunks
+          curl -s \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/releases/latest" \
+            -o release.json
+
+          python3 << 'PYEOF'
+          import json, subprocess, os, sys
+          with open("release.json") as f:
+              release = json.load(f)
+          assets = release.get("assets", [])
+          chunks = [a for a in assets if a["name"].startswith("chunk_") and a["name"].endswith(".mp4")]
+          if not chunks:
+              sys.exit(1)
+          token = os.environ["GH_TOKEN"]
+          for asset in sorted(chunks, key=lambda a: a["name"]):
+              url, name = asset["url"], asset["name"]
+              subprocess.run(["curl", "-L", "-s", "-H", f"Authorization: Bearer {token}", "-H", "Accept: application/octet-stream", "-o", f"chunks/{name}", url], check=True)
+          PYEOF
+
+      # ── 3. Python setup ──
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip' # 🔧 Added caching to speed up the environment setup
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ── 4. Fetch best Reddit post ──
+      - name: Fetch Reddit post
+        run: python scripts_long/fetch_post.py
+
+      # ── 5. Generate TTS audio + subtitles ──
+      - name: Generate TTS + captions
+        run: python scripts_long/generate_tts.py
+
+      # ── 5.5 Download fonts ──
+      - name: Download Fonts
+        run: python scripts_long/get_fonts.py
+
+      # ── 6. Setup FFmpeg ──
+      - name: Setup FFmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v3
+        
+      # ── 7. Render final video with ffmpeg ──
+      - name: Render video
+        run: python scripts_long/render_video.py
+
+      # ── 8. Mark post as seen and commit back ──
+      - name: Update seen_posts.json
+        run: python scripts_long/update_seen.py
+
+      - name: Commit seen_posts.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add seen_posts.json
+          git diff --staged --quiet || git commit -m "chore: mark long post as seen [skip ci]"
+          git push
+
+      # ── 9. Upload output.mp4 to youtube ──
+      - name: Upload to YouTube
+        env:
+          YOUTUBE_CREDENTIALS: ${{ secrets.YOUTUBE_CREDENTIALS }}
+        run: python scripts_long/upload_yt.py
