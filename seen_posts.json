@@ -60,7 +60,8 @@
     "3dqlny",
     "16u1gxn",
     "1tdt2qe",
-    "1te1q1e"
+    "1te1q1e",
+    "1scjvcq"
   ],
   "videos": [
     {
@@ -550,6 +551,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-05-15T22:24:23.569804"
+    },
+    {
+      "post_id": "1scjvcq",
+      "title": "Walmart Seller Support sent me the same robotic template email 3 times, each one sloppier / bot-ier / maddeningly template driven than the last. I responded in kind. I have been waiting 25 years to write back what I finally wrote.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-16T00:43:09.392009"
     }
   ]
 }
