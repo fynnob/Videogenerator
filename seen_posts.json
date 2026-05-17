@@ -67,7 +67,8 @@
     "1tee79p",
     "1tcg8cs",
     "1tcllu7",
-    "1tdvar5"
+    "1tdvar5",
+    "1teupfx"
   ],
   "videos": [
     {
@@ -613,6 +614,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-05-17T00:42:35.868536"
+    },
+    {
+      "post_id": "1teupfx",
+      "title": "Am I the asshole for not letting my friend use the photographer she refused to hire with me?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-17T02:24:12.077610"
     }
   ]
 }
