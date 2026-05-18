@@ -73,7 +73,8 @@
     "1tf8fhx",
     "1tfonou",
     "1tftkfi",
-    "1tfytsg"
+    "1tfytsg",
+    "1t46kct"
   ],
   "videos": [
     {
@@ -667,6 +668,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-17T22:24:12.998683"
+    },
+    {
+      "post_id": "1t46kct",
+      "title": "We Forgot 500 Servers Were Still Using the Old Proxy",
+      "subreddit": "TalesFromTechSupport",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-18T00:41:23.722018"
     }
   ]
 }
