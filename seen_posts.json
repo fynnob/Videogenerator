@@ -82,7 +82,8 @@
     "1tgglst",
     "1tgyfsd",
     "1th6q98",
-    "1thb3gz"
+    "1thb3gz",
+    "1thb7aa"
   ],
   "videos": [
     {
@@ -748,6 +749,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-05-19T06:24:38.388584"
+    },
+    {
+      "post_id": "1thb7aa",
+      "title": "ADVICE NEEDED: My girlfriend [25F] wanted to have a conversation after I [27M] failed the bar exam. What would you do?",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-19T10:24:37.141825"
     }
   ]
 }
