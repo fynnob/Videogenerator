@@ -92,7 +92,8 @@
     "1thnqs5",
     "1ti9yer",
     "1tiihpw",
-    "1ti9ixb"
+    "1ti9ixb",
+    "1tj01x8"
   ],
   "videos": [
     {
@@ -838,6 +839,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-20T18:24:44.411802"
+    },
+    {
+      "post_id": "1tj01x8",
+      "title": "today I messed up by ignoring a toothache for 2 years and now I need a $15,000 implant",
+      "subreddit": "tifu",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-20T22:24:13.089576"
     }
   ]
 }
