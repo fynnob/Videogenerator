@@ -111,7 +111,8 @@
     "1tl8lnd",
     "1sftoe0",
     "1tkyrbe",
-    "1tlag3w"
+    "1tlag3w",
+    "1fova4p"
   ],
   "videos": [
     {
@@ -1009,6 +1010,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-05-24T00:42:57.497289"
+    },
+    {
+      "post_id": "1fova4p",
+      "title": "Tricking My Slacker Coworker into Sabotaging Himself",
+      "subreddit": "ProRevenge",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-24T06:24:31.833463"
     }
   ]
 }
