@@ -130,7 +130,8 @@
     "1tlv6lq",
     "1tm1dz1",
     "1to1ukn",
-    "1sk0289"
+    "1sk0289",
+    "1enrrhw"
   ],
   "videos": [
     {
@@ -1180,6 +1181,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-27T06:24:35.095056"
+    },
+    {
+      "post_id": "1enrrhw",
+      "title": "Cable company kept calling to recharge even after disconnecting service, booked tech support to fix non-existent TV box.",
+      "subreddit": "ProRevenge",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-27T10:24:45.236756"
     }
   ]
 }
