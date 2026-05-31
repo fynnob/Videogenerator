@@ -155,7 +155,8 @@
     "1tdyeav",
     "1c8zrvd",
     "1bzqt61",
-    "1ts6f11"
+    "1ts6f11",
+    "18lixxu"
   ],
   "videos": [
     {
@@ -1405,6 +1406,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-31T00:39:26.120150"
+    },
+    {
+      "post_id": "18lixxu",
+      "title": "Operation Let it Go",
+      "subreddit": "ProRevenge",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-31T02:25:31.203148"
     }
   ]
 }
