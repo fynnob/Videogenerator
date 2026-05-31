@@ -159,7 +159,8 @@
     "18lixxu",
     "1tscy7h",
     "1tsmir9",
-    "1tstbux"
+    "1tstbux",
+    "1tspfja"
   ],
   "videos": [
     {
@@ -1441,6 +1442,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-05-31T14:24:22.735145"
+    },
+    {
+      "post_id": "1tspfja",
+      "title": "I didn't go to work for three days once.",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-05-31T18:24:37.030211"
     }
   ]
 }
