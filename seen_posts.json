@@ -187,7 +187,8 @@
     "1txjk6g",
     "1ty2veb",
     "1ty5lqv",
-    "1tafiyk"
+    "1tafiyk",
+    "1tu95f6"
   ],
   "videos": [
     {
@@ -1693,6 +1694,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-06T18:24:25.129395"
+    },
+    {
+      "post_id": "1tu95f6",
+      "title": "Professional photographer knew better than three ophthalmologists. It cost him \u20ac750.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-06T22:25:03.581644"
     }
   ]
 }
