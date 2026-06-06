@@ -186,7 +186,8 @@
     "1tsb2k7",
     "1txjk6g",
     "1ty2veb",
-    "1ty5lqv"
+    "1ty5lqv",
+    "1tafiyk"
   ],
   "videos": [
     {
@@ -1684,6 +1685,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-06T14:24:12.325269"
+    },
+    {
+      "post_id": "1tafiyk",
+      "title": "You are the support for this.",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-06T18:24:25.129395"
     }
   ]
 }
