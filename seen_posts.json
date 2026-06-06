@@ -184,7 +184,8 @@
     "1tc9wrv",
     "1tve2ph",
     "1tsb2k7",
-    "1txjk6g"
+    "1txjk6g",
+    "1ty2veb"
   ],
   "videos": [
     {
@@ -1666,6 +1667,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-06T06:24:14.773971"
+    },
+    {
+      "post_id": "1ty2veb",
+      "title": "AI slop has infiltrated the homes of the elderly.",
+      "subreddit": "TrueOffMyChest",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-06T10:24:13.225940"
     }
   ]
 }
