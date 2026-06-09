@@ -193,7 +193,8 @@
     "1tzmhg8",
     "1tz96z4",
     "1u04xl2",
-    "1u0xgst"
+    "1u0xgst",
+    "1u0d4ee"
   ],
   "videos": [
     {
@@ -1747,6 +1748,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-09T10:24:07.590166"
+    },
+    {
+      "post_id": "1u0d4ee",
+      "title": "Note from the moderator team - r/MaliciousCompliance",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-09T22:24:19.923260"
     }
   ]
 }
