@@ -194,7 +194,8 @@
     "1tz96z4",
     "1u04xl2",
     "1u0xgst",
-    "1u0d4ee"
+    "1u0d4ee",
+    "1u193o6"
   ],
   "videos": [
     {
@@ -1756,6 +1757,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-09T22:24:19.923260"
+    },
+    {
+      "post_id": "1u193o6",
+      "title": "I pretended to fart because everyone was scared. To this day I don't know what made that sound.",
+      "subreddit": "stories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-10T02:25:29.991980"
     }
   ]
 }
