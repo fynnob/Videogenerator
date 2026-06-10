@@ -195,7 +195,8 @@
     "1u04xl2",
     "1u0xgst",
     "1u0d4ee",
-    "1u193o6"
+    "1u193o6",
+    "1u0x9uo"
   ],
   "videos": [
     {
@@ -1765,6 +1766,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-10T02:25:29.991980"
+    },
+    {
+      "post_id": "1u0x9uo",
+      "title": "My (24F) boyfriend (24M) completely ruined what should have been one of the happiest moments of my life.",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-10T06:25:23.353382"
     }
   ]
 }
