@@ -212,7 +212,8 @@
     "1u3z46v",
     "1u4azog",
     "1t79571",
-    "1tdxm2j"
+    "1tdxm2j",
+    "1u43ing"
   ],
   "videos": [
     {
@@ -1918,6 +1919,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-13T10:24:45.882530"
+    },
+    {
+      "post_id": "1u43ing",
+      "title": "It's not the disease that's breaking me. It's my mother watching and calling it a performance",
+      "subreddit": "TrueOffMyChest",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-13T14:24:26.134593"
     }
   ]
 }
