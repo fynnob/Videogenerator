@@ -209,7 +209,8 @@
     "1u36jjy",
     "xodqvl",
     "1u37ymn",
-    "1u3z46v"
+    "1u3z46v",
+    "1u4azog"
   ],
   "videos": [
     {
@@ -1891,6 +1892,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-12T22:24:28.134796"
+    },
+    {
+      "post_id": "1u4azog",
+      "title": "Am I the asshole for telling my parents they lost the right to have opinions on my life after they gave me zero support in college?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-13T02:24:44.266509"
     }
   ]
 }
