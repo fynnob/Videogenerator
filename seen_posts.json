@@ -216,7 +216,8 @@
     "1u43ing",
     "1u4lxe0",
     "1u4jwv1",
-    "1u563xe"
+    "1u563xe",
+    "1u3hrn6"
   ],
   "videos": [
     {
@@ -1954,6 +1955,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-14T02:24:14.491561"
+    },
+    {
+      "post_id": "1u3hrn6",
+      "title": "Manager math-3 times 3 isn't 9",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-14T06:24:43.591664"
     }
   ]
 }
