@@ -218,7 +218,8 @@
     "1u4jwv1",
     "1u563xe",
     "1u3hrn6",
-    "1u52u4n"
+    "1u52u4n",
+    "1u5jyck"
   ],
   "videos": [
     {
@@ -1972,6 +1973,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-14T10:24:33.957735"
+    },
+    {
+      "post_id": "1u5jyck",
+      "title": "My coworker is falsifying patient records and my floor supervisor told me to \"let it go.\" What are my legal obligations?",
+      "subreddit": "legaladvice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-14T14:24:21.422395"
     }
   ]
 }
