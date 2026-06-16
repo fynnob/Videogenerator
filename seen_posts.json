@@ -228,7 +228,8 @@
     "1u64uin",
     "1u6ph3e",
     "1u32tnw",
-    "vxedjo"
+    "vxedjo",
+    "1u6vgpz"
   ],
   "videos": [
     {
@@ -2062,6 +2063,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-16T02:24:50.512733"
+    },
+    {
+      "post_id": "1u6vgpz",
+      "title": "Am I the asshole for not giving my ex credit for a car I bought our daughter without his help",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-16T06:25:03.536329"
     }
   ]
 }
