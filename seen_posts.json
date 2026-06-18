@@ -236,7 +236,8 @@
     "1u78l0m",
     "1u4tztu",
     "1u7yz9w",
-    "1u7zoux"
+    "1u7zoux",
+    "1u8pzm5"
   ],
   "videos": [
     {
@@ -2134,6 +2135,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-17T22:24:20.730541"
+    },
+    {
+      "post_id": "1u8pzm5",
+      "title": "Am I the asshole for selling my parents' house after they let my unemployed sibling live there rent-free for 10 years?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-18T02:25:06.768798"
     }
   ]
 }
