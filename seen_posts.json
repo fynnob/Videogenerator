@@ -237,7 +237,8 @@
     "1u4tztu",
     "1u7yz9w",
     "1u7zoux",
-    "1u8pzm5"
+    "1u8pzm5",
+    "1u8wfic"
   ],
   "videos": [
     {
@@ -2143,6 +2144,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-18T02:25:06.768798"
+    },
+    {
+      "post_id": "1u8wfic",
+      "title": "today I messed up by not knowing my girlfriend and my boss follow each other on instagram",
+      "subreddit": "tifu",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-18T06:24:23.052755"
     }
   ]
 }
