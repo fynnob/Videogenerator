@@ -246,7 +246,8 @@
     "1tgpmrt",
     "1u9nmt4",
     "1u9x0nd",
-    "1u9z6ix"
+    "1u9z6ix",
+    "1u8jc0t"
   ],
   "videos": [
     {
@@ -2224,6 +2225,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-19T14:24:09.795834"
+    },
+    {
+      "post_id": "1u8jc0t",
+      "title": "today I messed up by doing Tech Support",
+      "subreddit": "tifu",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-19T18:24:21.854126"
     }
   ]
 }
