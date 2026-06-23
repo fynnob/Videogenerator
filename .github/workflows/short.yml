@@ -90,9 +90,11 @@ jobs:
       - name: Download Fonts
         run: python scripts/get_fonts.py
 
-      # ── 6. Setup FFmpeg (Cached, super fast) ──
-      - name: Setup FFmpeg
-        uses: FedericoCarboni/setup-ffmpeg@v3
+      # ── 6. Setup FFmpeg ──
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
         
       # ── 7. Render final video with ffmpeg ──
       - name: Render video
