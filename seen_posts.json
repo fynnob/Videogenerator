@@ -267,7 +267,8 @@
     "1ucrldg",
     "1ucsk6c",
     "1u8itea",
-    "1udymls"
+    "1udymls",
+    "1udsyx5"
   ],
   "videos": [
     {
@@ -2413,6 +2414,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-24T02:24:49.691870"
+    },
+    {
+      "post_id": "1udsyx5",
+      "title": "Substitute teacher caught me lacking and called me out",
+      "subreddit": "confession",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-24T06:24:39.194066"
     }
   ]
 }
