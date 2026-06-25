@@ -274,7 +274,8 @@
     "1uedegu",
     "1ue98ej",
     "1uen828",
-    "1uertop"
+    "1uertop",
+    "1uenpwh"
   ],
   "videos": [
     {
@@ -2476,6 +2477,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-25T06:25:43.802788"
+    },
+    {
+      "post_id": "1uenpwh",
+      "title": "Look at me; I'm the Light Captain now",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-25T10:25:25.082990"
     }
   ]
 }
