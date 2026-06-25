@@ -275,7 +275,8 @@
     "1ue98ej",
     "1uen828",
     "1uertop",
-    "1uenpwh"
+    "1uenpwh",
+    "1ud8k5x"
   ],
   "videos": [
     {
@@ -2485,6 +2486,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-06-25T10:25:25.082990"
+    },
+    {
+      "post_id": "1ud8k5x",
+      "title": "Don't want me to do the work myself? Ok, then run and do it yourself.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-25T18:25:43.643800"
     }
   ]
 }
