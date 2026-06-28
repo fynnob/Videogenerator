@@ -288,7 +288,8 @@
     "1ufnm1l",
     "1ugzdiv",
     "1ubd7he",
-    "1ugwdm1"
+    "1ugwdm1",
+    "1qoa0ib"
   ],
   "videos": [
     {
@@ -2602,6 +2603,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-06-27T22:25:02.481458"
+    },
+    {
+      "post_id": "1qoa0ib",
+      "title": "That time my platoon made a chief supervisor cry",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-06-28T02:26:07.525483"
     }
   ]
 }
