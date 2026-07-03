@@ -316,7 +316,8 @@
     "1su9jt3",
     "1uff2y3",
     "1ukx8zl",
-    "1ulyzk9"
+    "1ulyzk9",
+    "1tace2z"
   ],
   "videos": [
     {
@@ -2854,6 +2855,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-07-03T02:24:29.176873"
+    },
+    {
+      "post_id": "1tace2z",
+      "title": "\u201cI mean it, stay out of the kitchen\u201d okay if you say so.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-03T06:24:59.361904"
     }
   ]
 }
