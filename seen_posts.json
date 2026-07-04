@@ -323,7 +323,8 @@
     "1um2drt",
     "1t8zug7",
     "1umdn94",
-    "1udmcrj"
+    "1udmcrj",
+    "1t0ekxo"
   ],
   "videos": [
     {
@@ -2917,6 +2918,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-04T06:25:09.970517"
+    },
+    {
+      "post_id": "1t0ekxo",
+      "title": "During Covid, boss was trying to keep us \u201csafe\u201d",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-04T10:24:40.092508"
     }
   ]
 }
