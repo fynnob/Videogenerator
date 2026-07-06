@@ -339,7 +339,8 @@
     "1uomk9k",
     "1uo0mvf",
     "1p9fr4g",
-    "1uotbg0"
+    "1uotbg0",
+    "1syia08"
   ],
   "videos": [
     {
@@ -3061,6 +3062,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-06T18:24:36.128679"
+    },
+    {
+      "post_id": "1syia08",
+      "title": "Rude customer asked . . . and received",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-06T22:25:25.446767"
     }
   ]
 }
