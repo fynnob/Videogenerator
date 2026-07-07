@@ -342,7 +342,8 @@
     "1uotbg0",
     "1syia08",
     "1up037y",
-    "1upahhz"
+    "1upahhz",
+    "1upehmn"
   ],
   "videos": [
     {
@@ -3088,6 +3089,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-07T06:24:24.763994"
+    },
+    {
+      "post_id": "1upehmn",
+      "title": "Am I the asshole for refusing to follow my friend\u2019s parents\u2019 house rules and leaving?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-07T10:24:57.284197"
     }
   ]
 }
