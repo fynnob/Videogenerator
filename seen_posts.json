@@ -359,7 +359,8 @@
     "1p5xh0a",
     "1urqemy",
     "1us33ap",
-    "1urejtt"
+    "1urejtt",
+    "1usdipo"
   ],
   "videos": [
     {
@@ -3241,6 +3242,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-07-10T02:24:38.068029"
+    },
+    {
+      "post_id": "1usdipo",
+      "title": "I accidentally helped a couple buy a mattress and the real salesman gave me a discount as a thank you",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-10T06:24:47.981599"
     }
   ]
 }
