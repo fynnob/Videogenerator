@@ -363,7 +363,8 @@
     "1usdipo",
     "1ur4ai2",
     "1usji71",
-    "1usnigj"
+    "1usnigj",
+    "1p5noki"
   ],
   "videos": [
     {
@@ -3277,6 +3278,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-10T18:25:00.701955"
+    },
+    {
+      "post_id": "1p5noki",
+      "title": "\u201cStranger Danger!\u201d",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-10T22:25:10.179440"
     }
   ]
 }
