@@ -369,7 +369,8 @@
     "1ut3co0",
     "1usmdku",
     "1utdntz",
-    "1us35eg"
+    "1us35eg",
+    "1u9zjtg"
   ],
   "videos": [
     {
@@ -3331,6 +3332,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-07-11T22:25:15.751205"
+    },
+    {
+      "post_id": "1u9zjtg",
+      "title": "Specialist Greer Likes the Gas Chamber",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-12T00:42:08.905453"
     }
   ]
 }
