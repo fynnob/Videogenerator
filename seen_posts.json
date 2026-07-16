@@ -395,7 +395,8 @@
     "1urwt7l",
     "1uwyp58",
     "1sritpr",
-    "1uxqwfa"
+    "1uxqwfa",
+    "1uwm4nq"
   ],
   "videos": [
     {
@@ -3565,6 +3566,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-07-16T06:25:11.641145"
+    },
+    {
+      "post_id": "1uwm4nq",
+      "title": "When I was 8 years old I did something petty and nasty to my abusive mom.",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-16T10:24:47.150623"
     }
   ]
 }
