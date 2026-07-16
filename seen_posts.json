@@ -393,7 +393,8 @@
     "1uwnde7",
     "1uwrmk8",
     "1urwt7l",
-    "1uwyp58"
+    "1uwyp58",
+    "1sritpr"
   ],
   "videos": [
     {
@@ -3547,6 +3548,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-15T22:24:43.117126"
+    },
+    {
+      "post_id": "1sritpr",
+      "title": "You want me to escalate every time? Ok then!",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-16T02:25:10.071501"
     }
   ]
 }
