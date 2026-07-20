@@ -419,7 +419,8 @@
     "1v0p9i1",
     "1v19ojq",
     "1v1ejv4",
-    "1v1cum1"
+    "1v1cum1",
+    "1v1p1g6"
   ],
   "videos": [
     {
@@ -3781,6 +3782,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-20T14:24:52.214344"
+    },
+    {
+      "post_id": "1v1p1g6",
+      "title": "today I messed up by telling my friend I wouldn't say goodbye to her cat because I'd see her again, then her cat died",
+      "subreddit": "tifu",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-20T18:25:04.891423"
     }
   ]
 }
