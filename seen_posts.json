@@ -428,7 +428,8 @@
     "1v2ikt0",
     "1v2qein",
     "1ux5l59",
-    "1v1nd79"
+    "1v1nd79",
+    "1uxflx1"
   ],
   "videos": [
     {
@@ -3862,6 +3863,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-22T06:26:21.288994"
+    },
+    {
+      "post_id": "1uxflx1",
+      "title": "I\u2019m losing my dad again",
+      "subreddit": "entitledparents",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-22T10:24:40.576063"
     }
   ]
 }
