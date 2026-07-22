@@ -429,7 +429,8 @@
     "1v2qein",
     "1ux5l59",
     "1v1nd79",
-    "1uxflx1"
+    "1uxflx1",
+    "1v3d1g0"
   ],
   "videos": [
     {
@@ -3871,6 +3872,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-22T10:24:40.576063"
+    },
+    {
+      "post_id": "1v3d1g0",
+      "title": "My boyfriend (M31) called me (F30)\"beggy\" for asking about a proposal, and I can't seem to get over it.",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-22T14:24:52.485404"
     }
   ]
 }
