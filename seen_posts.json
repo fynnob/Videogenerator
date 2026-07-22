@@ -426,7 +426,8 @@
     "1smpht8",
     "1v2aosq",
     "1v2ikt0",
-    "1v2qein"
+    "1v2qein",
+    "1ux5l59"
   ],
   "videos": [
     {
@@ -3844,6 +3845,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-21T22:24:57.756707"
+    },
+    {
+      "post_id": "1ux5l59",
+      "title": "I No Longer Work Here. Begging not to, Actually.",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-22T02:26:05.999178"
     }
   ]
 }
