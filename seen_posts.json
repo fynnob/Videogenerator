@@ -427,7 +427,8 @@
     "1v2aosq",
     "1v2ikt0",
     "1v2qein",
-    "1ux5l59"
+    "1ux5l59",
+    "1v1nd79"
   ],
   "videos": [
     {
@@ -3853,6 +3854,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-07-22T02:26:05.999178"
+    },
+    {
+      "post_id": "1v1nd79",
+      "title": "Kid gets in dog crate and cannot get out. Mom gets angry at us.",
+      "subreddit": "entitledparents",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-22T06:26:21.288994"
     }
   ]
 }
