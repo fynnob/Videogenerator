@@ -434,7 +434,8 @@
     "1uyyeeb",
     "1v3mx3h",
     "1v41w7d",
-    "1v3pcza"
+    "1v3pcza",
+    "1v4d7z7"
   ],
   "videos": [
     {
@@ -3916,6 +3917,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-23T10:25:02.521875"
+    },
+    {
+      "post_id": "1v4d7z7",
+      "title": "My boyfriend (26M) and I (22F) keep having the same argument, and I'm starting to wonder if I'm really the problem.",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-23T14:24:44.161440"
     }
   ]
 }
