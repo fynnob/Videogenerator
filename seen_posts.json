@@ -443,7 +443,8 @@
     "1v4rc6i",
     "1usimkd",
     "1v5f336",
-    "1v5qi0j"
+    "1v5qi0j",
+    "1v5ur6m"
   ],
   "videos": [
     {
@@ -3997,6 +3998,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-07-25T06:25:33.354159"
+    },
+    {
+      "post_id": "1v5ur6m",
+      "title": "My, 38M, husband and I, 36F, are at a stalemate regarding childcare for our 2.5 year old son. Is it unreasonable to pursue daycare 3 days a week, despite my in-laws eagerness to watch our children for free?",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-25T10:25:44.690861"
     }
   ]
 }
