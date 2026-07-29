@@ -462,7 +462,8 @@
     "1v8fz7v",
     "1v8zy03",
     "1v7oci5",
-    "1v8vht6"
+    "1v8vht6",
+    "1v9k5ha"
   ],
   "videos": [
     {
@@ -4168,6 +4169,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-29T11:06:38.586712"
+    },
+    {
+      "post_id": "1v9k5ha",
+      "title": "Am I the asshole for expecting my cousin to repay the $47,000 I loaned him after his bankruptcy?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-29T14:25:14.974282"
     }
   ]
 }
