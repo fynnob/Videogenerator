@@ -476,7 +476,8 @@
     "1oabf6x",
     "1vb3g8p",
     "1o8cp8j",
-    "1vb5d69"
+    "1vb5d69",
+    "1v8zr3d"
   ],
   "videos": [
     {
@@ -4294,6 +4295,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-07-31T18:25:56.403423"
+    },
+    {
+      "post_id": "1v8zr3d",
+      "title": "I became the emotional support NPC for a server migration",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-31T22:25:05.412812"
     }
   ]
 }
