@@ -474,7 +474,8 @@
     "1vayg69",
     "1p41x5e",
     "1oabf6x",
-    "1vb3g8p"
+    "1vb3g8p",
+    "1o8cp8j"
   ],
   "videos": [
     {
@@ -4276,6 +4277,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-07-31T10:24:49.276311"
+    },
+    {
+      "post_id": "1o8cp8j",
+      "title": "The Mortars",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-07-31T14:24:43.491710"
     }
   ]
 }
