@@ -484,7 +484,8 @@
     "1vcis15",
     "1vcngae",
     "1vcipfw",
-    "1vcgx3l"
+    "1vcgx3l",
+    "1vd7azn"
   ],
   "videos": [
     {
@@ -4366,6 +4367,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-01T22:24:53.406869"
+    },
+    {
+      "post_id": "1vd7azn",
+      "title": "Can My Father Force me to pay private school tuition.",
+      "subreddit": "legaladvice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-02T14:24:52.226508"
     }
   ]
 }
