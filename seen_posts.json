@@ -490,7 +490,8 @@
     "1vdtabg",
     "1vcnyf6",
     "1vdupph",
-    "1vcg0lz"
+    "1vcg0lz",
+    "1ve9uhj"
   ],
   "videos": [
     {
@@ -4420,6 +4421,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-03T06:26:03.675593"
+    },
+    {
+      "post_id": "1ve9uhj",
+      "title": "Do I '29M' propose to my partner '29F' with the original engagement ring or buy a new one?",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-03T14:24:48.483724"
     }
   ]
 }
