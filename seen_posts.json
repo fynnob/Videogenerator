@@ -489,7 +489,8 @@
     "1vd1193",
     "1vdtabg",
     "1vcnyf6",
-    "1vdupph"
+    "1vdupph",
+    "1vcg0lz"
   ],
   "videos": [
     {
@@ -4411,6 +4412,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-03T02:24:46.630919"
+    },
+    {
+      "post_id": "1vcg0lz",
+      "title": "Trying to Figure Out Which Deployment My Dad's Old Submarine Story Actually Happened During",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-03T06:26:03.675593"
     }
   ]
 }
