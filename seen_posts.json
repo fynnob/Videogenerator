@@ -503,7 +503,8 @@
     "1vfs4si",
     "1vfuduh",
     "1vfzpwf",
-    "1vcq7ox"
+    "1vcq7ox",
+    "1vgljxy"
   ],
   "videos": [
     {
@@ -4537,6 +4538,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-06T02:24:53.974899"
+    },
+    {
+      "post_id": "1vgljxy",
+      "title": "TIFUPDATE by getting drunk at a housewarming party",
+      "subreddit": "tifu",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-06T06:25:34.788971"
     }
   ]
 }
