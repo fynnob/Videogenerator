@@ -506,7 +506,8 @@
     "1vcq7ox",
     "1vgljxy",
     "1umvb7i",
-    "1vh8p79"
+    "1vh8p79",
+    "1vhb3do"
   ],
   "videos": [
     {
@@ -4564,6 +4565,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-06T22:55:25.435313"
+    },
+    {
+      "post_id": "1vhb3do",
+      "title": "How did i know my family and friends faces when I'm new born and i can't see anything?",
+      "subreddit": "stories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-07T02:24:58.583482"
     }
   ]
 }
