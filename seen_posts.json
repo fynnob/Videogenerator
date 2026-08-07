@@ -509,7 +509,8 @@
     "1vh8p79",
     "1vhb3do",
     "1vgj44a",
-    "1vhvlmu"
+    "1vhvlmu",
+    "1vbsfs9"
   ],
   "videos": [
     {
@@ -4591,6 +4592,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-07T14:24:29.899674"
+    },
+    {
+      "post_id": "1vbsfs9",
+      "title": "My dad acts like I'm his mother.",
+      "subreddit": "entitledparents",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-07T18:24:51.371667"
     }
   ]
 }
