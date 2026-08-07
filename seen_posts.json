@@ -510,7 +510,8 @@
     "1vhb3do",
     "1vgj44a",
     "1vhvlmu",
-    "1vbsfs9"
+    "1vbsfs9",
+    "1via7ft"
   ],
   "videos": [
     {
@@ -4600,6 +4601,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-07T18:24:51.371667"
+    },
+    {
+      "post_id": "1via7ft",
+      "title": "My boss wanted me to falsify invoices, so I gave him a \"hardware problem\" my last two weeks",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-07T22:25:09.370002"
     }
   ]
 }
