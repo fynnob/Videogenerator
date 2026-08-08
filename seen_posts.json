@@ -516,7 +516,8 @@
     "1vih2a4",
     "1vhkvb6",
     "1v8dlpi",
-    "1vixqi2"
+    "1vixqi2",
+    "1vgc1lw"
   ],
   "videos": [
     {
@@ -4654,6 +4655,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-08T18:25:34.947558"
+    },
+    {
+      "post_id": "1vgc1lw",
+      "title": "Something I don't miss is how people didn't know what was going on around them - even after being told.",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-08T22:25:35.879508"
     }
   ]
 }
