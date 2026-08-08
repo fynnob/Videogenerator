@@ -513,7 +513,8 @@
     "1vbsfs9",
     "1via7ft",
     "1vi5bgw",
-    "1vih2a4"
+    "1vih2a4",
+    "1vhkvb6"
   ],
   "videos": [
     {
@@ -4627,6 +4628,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-08T06:24:42.537974"
+    },
+    {
+      "post_id": "1vhkvb6",
+      "title": "\"The news goes away.\"",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-08T10:24:39.764486"
     }
   ]
 }
