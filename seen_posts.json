@@ -517,7 +517,8 @@
     "1vhkvb6",
     "1v8dlpi",
     "1vixqi2",
-    "1vgc1lw"
+    "1vgc1lw",
+    "1vjts6d"
   ],
   "videos": [
     {
@@ -4663,6 +4664,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-08T22:25:35.879508"
+    },
+    {
+      "post_id": "1vjts6d",
+      "title": "New Manager",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-09T18:24:45.253703"
     }
   ]
 }
