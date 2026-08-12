@@ -530,7 +530,8 @@
     "1vligli",
     "1vjhpoz",
     "1vlu2gl",
-    "1vm2wcx"
+    "1vm2wcx",
+    "1vkubys"
   ],
   "videos": [
     {
@@ -4780,6 +4781,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-12T06:24:57.067334"
+    },
+    {
+      "post_id": "1vkubys",
+      "title": "Coworker in the next cubicle over annoyed me with constant interruptions. I switched my keyboard from Cherry reds to blues in retaliation.",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-12T10:25:39.846830"
     }
   ]
 }
