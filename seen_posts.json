@@ -531,7 +531,8 @@
     "1vjhpoz",
     "1vlu2gl",
     "1vm2wcx",
-    "1vkubys"
+    "1vkubys",
+    "1vm2w8i"
   ],
   "videos": [
     {
@@ -4789,6 +4790,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-12T10:25:39.846830"
+    },
+    {
+      "post_id": "1vm2w8i",
+      "title": "Wrong hotel room. Wrong man in the bed. He looked up and said, \u201cYou\u2019re late.\u201d Then he pulled me down.",
+      "subreddit": "stories",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-12T18:25:31.288250"
     }
   ]
 }
