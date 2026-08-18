@@ -561,7 +561,8 @@
     "1vqffr9",
     "1vqs2tv",
     "1vrb966",
-    "1vr0is3"
+    "1vr0is3",
+    "1vrdogd"
   ],
   "videos": [
     {
@@ -5059,6 +5060,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-18T14:24:38.333023"
+    },
+    {
+      "post_id": "1vrdogd",
+      "title": "today I messed up by buying a decorative in-game plant for 25$",
+      "subreddit": "tifu",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-18T18:30:29.777508"
     }
   ]
 }
