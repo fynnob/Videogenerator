@@ -570,7 +570,8 @@
     "1vsnpdp",
     "1vshd0n",
     "1vss7kw",
-    "1vss8s1"
+    "1vss8s1",
+    "1su8zfj"
   ],
   "videos": [
     {
@@ -5140,6 +5141,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-20T14:25:06.328150"
+    },
+    {
+      "post_id": "1su8zfj",
+      "title": "\"This is not something that computer would ever do\" or A Tale of two Printers",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-20T18:25:58.402784"
     }
   ]
 }
