@@ -574,7 +574,8 @@
     "1su8zfj",
     "1vthga0",
     "1vtxcnp",
-    "1vu2xbu"
+    "1vu2xbu",
+    "1vta3ys"
   ],
   "videos": [
     {
@@ -5176,6 +5177,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-21T06:25:50.911459"
+    },
+    {
+      "post_id": "1vta3ys",
+      "title": "Received no service at a store, so I just walked out with items.",
+      "subreddit": "confession",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-21T14:24:21.778571"
     }
   ]
 }
