@@ -573,7 +573,8 @@
     "1vss8s1",
     "1su8zfj",
     "1vthga0",
-    "1vtxcnp"
+    "1vtxcnp",
+    "1vu2xbu"
   ],
   "videos": [
     {
@@ -5167,6 +5168,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-21T02:25:06.925504"
+    },
+    {
+      "post_id": "1vu2xbu",
+      "title": "Am I the asshole for upgrading my husband's and I's flights on a family vacation?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-21T06:25:50.911459"
     }
   ]
 }
