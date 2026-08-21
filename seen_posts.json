@@ -572,7 +572,8 @@
     "1vss7kw",
     "1vss8s1",
     "1su8zfj",
-    "1vthga0"
+    "1vthga0",
+    "1vtxcnp"
   ],
   "videos": [
     {
@@ -5158,6 +5159,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-20T22:24:34.733873"
+    },
+    {
+      "post_id": "1vtxcnp",
+      "title": "Apparently a green apron makes me an expert on velvet yarn and store policy",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-21T02:25:06.925504"
     }
   ]
 }
