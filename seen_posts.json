@@ -580,7 +580,8 @@
     "1vuqj42",
     "1vudrl6",
     "1vv4fb6",
-    "1stvbyt"
+    "1stvbyt",
+    "1vvb4pa"
   ],
   "videos": [
     {
@@ -5230,6 +5231,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-22T14:25:12.470380"
+    },
+    {
+      "post_id": "1vvb4pa",
+      "title": "No family safety net, financial support or future inheritances.",
+      "subreddit": "TrueOffMyChest",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-22T18:24:40.218249"
     }
   ]
 }
