@@ -576,7 +576,8 @@
     "1vtxcnp",
     "1vu2xbu",
     "1vta3ys",
-    "1vuc545"
+    "1vuc545",
+    "1vuqj42"
   ],
   "videos": [
     {
@@ -5194,6 +5195,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-21T18:25:09.537860"
+    },
+    {
+      "post_id": "1vuqj42",
+      "title": "Nice woman at CEX",
+      "subreddit": "PointlessStories",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-22T02:24:21.022613"
     }
   ]
 }
