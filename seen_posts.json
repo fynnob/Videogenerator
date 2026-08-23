@@ -583,7 +583,8 @@
     "1stvbyt",
     "1vvb4pa",
     "1vvmcoc",
-    "1vvpzmu"
+    "1vvpzmu",
+    "1vr02g6"
   ],
   "videos": [
     {
@@ -5257,6 +5258,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-23T00:39:42.732882"
+    },
+    {
+      "post_id": "1vr02g6",
+      "title": "I was told to let inspectors into my apt and cooperate with them",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-23T02:24:54.540466"
     }
   ]
 }
