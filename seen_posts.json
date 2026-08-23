@@ -587,7 +587,8 @@
     "1vr02g6",
     "1vvcrkw",
     "1vqr7nf",
-    "1vw66ht"
+    "1vw66ht",
+    "1vw5tpd"
   ],
   "videos": [
     {
@@ -5293,6 +5294,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-23T14:25:18.726118"
+    },
+    {
+      "post_id": "1vw5tpd",
+      "title": "I am not afraid of the rain",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-23T18:25:08.933486"
     }
   ]
 }
