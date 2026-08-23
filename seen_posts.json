@@ -584,7 +584,8 @@
     "1vvb4pa",
     "1vvmcoc",
     "1vvpzmu",
-    "1vr02g6"
+    "1vr02g6",
+    "1vvcrkw"
   ],
   "videos": [
     {
@@ -5266,6 +5267,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-23T02:24:54.540466"
+    },
+    {
+      "post_id": "1vvcrkw",
+      "title": "There is a saying a sociopath will mess up your things and then pretend to look for it along with you.",
+      "subreddit": "confession",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-23T06:24:15.552806"
     }
   ]
 }
