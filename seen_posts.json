@@ -585,7 +585,8 @@
     "1vvmcoc",
     "1vvpzmu",
     "1vr02g6",
-    "1vvcrkw"
+    "1vvcrkw",
+    "1vqr7nf"
   ],
   "videos": [
     {
@@ -5275,6 +5276,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-23T06:24:15.552806"
+    },
+    {
+      "post_id": "1vqr7nf",
+      "title": "My latest new client set the strictest rules I\u2019ve ever heard. I obeyed every one of them. She still claimed I was the problem and lost her mind.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-23T10:25:45.966748"
     }
   ]
 }
