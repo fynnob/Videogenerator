@@ -582,7 +582,8 @@
     "1vv4fb6",
     "1stvbyt",
     "1vvb4pa",
-    "1vvmcoc"
+    "1vvmcoc",
+    "1vvpzmu"
   ],
   "videos": [
     {
@@ -5248,6 +5249,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-22T22:24:41.852582"
+    },
+    {
+      "post_id": "1vvpzmu",
+      "title": "A 24F I was dating told me (24M) that we cannot talk anymore due to family issues",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-23T00:39:42.732882"
     }
   ]
 }
