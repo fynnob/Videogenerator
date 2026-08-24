@@ -590,7 +590,8 @@
     "1vw66ht",
     "1vw5tpd",
     "1vwjyzr",
-    "1vvpfq3"
+    "1vvpfq3",
+    "1snga1z"
   ],
   "videos": [
     {
@@ -5320,6 +5321,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-24T00:42:25.476409"
+    },
+    {
+      "post_id": "1snga1z",
+      "title": "Using router commands without knowing their purpose...",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-24T02:25:41.531149"
     }
   ]
 }
