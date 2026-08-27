@@ -606,7 +606,8 @@
     "1vyhi48",
     "1vyz5bn",
     "1vz5djh",
-    "1vz2od1"
+    "1vz2od1",
+    "1vzfz1l"
   ],
   "videos": [
     {
@@ -5464,6 +5465,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-27T10:24:46.124946"
+    },
+    {
+      "post_id": "1vzfz1l",
+      "title": "401k drained during acquisition. Can I do anything?",
+      "subreddit": "legaladvice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-27T14:24:59.817743"
     }
   ]
 }
