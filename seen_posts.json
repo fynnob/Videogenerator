@@ -608,7 +608,8 @@
     "1vz5djh",
     "1vz2od1",
     "1vzfz1l",
-    "1vz3mky"
+    "1vz3mky",
+    "1vzsjpo"
   ],
   "videos": [
     {
@@ -5482,6 +5483,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-27T18:24:28.007948"
+    },
+    {
+      "post_id": "1vzsjpo",
+      "title": "today I messed up by searching my own name in 2 years of client call recordings",
+      "subreddit": "tifu",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-27T22:25:28.674647"
     }
   ]
 }
