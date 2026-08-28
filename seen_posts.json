@@ -613,7 +613,8 @@
     "1vyhbib",
     "1w05jo0",
     "1w090y9",
-    "1w0pltq"
+    "1w0pltq",
+    "1vp572w"
   ],
   "videos": [
     {
@@ -5527,6 +5528,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-28T14:24:56.310030"
+    },
+    {
+      "post_id": "1vp572w",
+      "title": "Valentine's Day Karen",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-28T18:25:03.255002"
     }
   ]
 }
