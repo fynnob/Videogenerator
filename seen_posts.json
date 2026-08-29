@@ -615,7 +615,8 @@
     "1w090y9",
     "1w0pltq",
     "1vp572w",
-    "1w02q7s"
+    "1w02q7s",
+    "1w19dws"
   ],
   "videos": [
     {
@@ -5545,6 +5546,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-28T22:25:00.039393"
+    },
+    {
+      "post_id": "1w19dws",
+      "title": "My Sister Got the Better Room. I Got the Better Toilet Paper.",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-29T02:24:34.708177"
     }
   ]
 }
