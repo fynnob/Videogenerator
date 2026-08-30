@@ -621,7 +621,8 @@
     "1vxfa1y",
     "1w1fu81",
     "1w1sr6k",
-    "1w1qd7n"
+    "1w1qd7n",
+    "1vzuwgh"
   ],
   "videos": [
     {
@@ -5599,6 +5600,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-30T02:24:43.932535"
+    },
+    {
+      "post_id": "1vzuwgh",
+      "title": "When Nerf Weaponry IS the solution.",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-30T06:25:15.225494"
     }
   ]
 }
