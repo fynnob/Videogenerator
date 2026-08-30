@@ -622,7 +622,8 @@
     "1w1fu81",
     "1w1sr6k",
     "1w1qd7n",
-    "1vzuwgh"
+    "1vzuwgh",
+    "1w2fz48"
   ],
   "videos": [
     {
@@ -5608,6 +5609,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-30T06:25:15.225494"
+    },
+    {
+      "post_id": "1w2fz48",
+      "title": "Digging tool broke when digging a trench in basic",
+      "subreddit": "MilitaryStories",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-30T14:24:41.688253"
     }
   ]
 }
