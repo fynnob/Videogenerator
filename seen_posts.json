@@ -630,7 +630,8 @@
     "1w2nfb3",
     "1w2wj6u",
     "1w2s3hx",
-    "1w2zttz"
+    "1w2zttz",
+    "1w38b1z"
   ],
   "videos": [
     {
@@ -5680,6 +5681,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-08-31T18:26:03.181307"
+    },
+    {
+      "post_id": "1w38b1z",
+      "title": "I had the strangest argument with someone online who wasn't actually arguing with me",
+      "subreddit": "PointlessStories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-08-31T22:24:58.704478"
     }
   ]
 }
