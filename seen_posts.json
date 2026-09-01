@@ -631,7 +631,8 @@
     "1w2wj6u",
     "1w2s3hx",
     "1w2zttz",
-    "1w38b1z"
+    "1w38b1z",
+    "1w39uyp"
   ],
   "videos": [
     {
@@ -5689,6 +5690,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-08-31T22:24:58.704478"
+    },
+    {
+      "post_id": "1w39uyp",
+      "title": "was tracing dead copper pairs in the basement of a 1970s clinic and found a handwritten maintenance log from 1989 that solved a local rumor",
+      "subreddit": "stories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-01T02:25:24.048848"
     }
   ]
 }
