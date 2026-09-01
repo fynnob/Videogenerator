@@ -634,7 +634,8 @@
     "1w38b1z",
     "1w39uyp",
     "1w419ce",
-    "1w42xo3"
+    "1w42xo3",
+    "1w23ik9"
   ],
   "videos": [
     {
@@ -5716,6 +5717,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-01T10:24:48.126912"
+    },
+    {
+      "post_id": "1w23ik9",
+      "title": "Black Friday bargain hunter apparently sees any clothes as a supermarket uniform.",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-01T14:24:42.731888"
     }
   ]
 }
