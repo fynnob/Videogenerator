@@ -642,7 +642,8 @@
     "1w4ybuc",
     "1vm8fa5",
     "1w4duie",
-    "1w2ied1"
+    "1w2ied1",
+    "1shzxvy"
   ],
   "videos": [
     {
@@ -5788,6 +5789,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-02T18:25:18.907889"
+    },
+    {
+      "post_id": "1shzxvy",
+      "title": "It's always DNS",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-02T22:26:04.410028"
     }
   ]
 }
