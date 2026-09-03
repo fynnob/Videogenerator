@@ -645,7 +645,8 @@
     "1w2ied1",
     "1shzxvy",
     "1vlbokp",
-    "1w5hqjx"
+    "1w5hqjx",
+    "1w4ukds"
   ],
   "videos": [
     {
@@ -5815,6 +5816,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-03T10:25:30.645141"
+    },
+    {
+      "post_id": "1w4ukds",
+      "title": "My parents say I should \u201cgo outside more,\u201d but won\u2019t let me go anywhere by myself",
+      "subreddit": "entitledparents",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-03T14:25:19.001337"
     }
   ]
 }
