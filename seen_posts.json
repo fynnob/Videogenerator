@@ -652,7 +652,8 @@
     "1w64shm",
     "1w6nuzk",
     "1vfscvf",
-    "1w70wtq"
+    "1w70wtq",
+    "1w7hbam"
   ],
   "videos": [
     {
@@ -5878,6 +5879,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-04T18:25:12.665955"
+    },
+    {
+      "post_id": "1w7hbam",
+      "title": "Making a pointless video every week",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-04T22:24:44.772488"
     }
   ]
 }
