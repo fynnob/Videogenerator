@@ -666,7 +666,8 @@
     "1w8pck9",
     "1w8h98y",
     "1w8fuaz",
-    "1w272aw"
+    "1w272aw",
+    "1w87trl"
   ],
   "videos": [
     {
@@ -6004,6 +6005,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-07T00:42:33.637379"
+    },
+    {
+      "post_id": "1w87trl",
+      "title": "How much are these? Can you check for me?",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-07T02:24:33.257996"
     }
   ]
 }
