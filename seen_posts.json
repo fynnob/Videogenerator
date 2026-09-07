@@ -668,7 +668,8 @@
     "1w8fuaz",
     "1w272aw",
     "1w87trl",
-    "1w9byyh"
+    "1w9byyh",
+    "1sal5l0"
   ],
   "videos": [
     {
@@ -6022,6 +6023,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-07T06:25:57.324054"
+    },
+    {
+      "post_id": "1sal5l0",
+      "title": "Windows not working (car windows)",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-07T10:24:35.972780"
     }
   ]
 }
