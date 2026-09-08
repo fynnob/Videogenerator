@@ -671,7 +671,8 @@
     "1w9byyh",
     "1sal5l0",
     "1w9pfa3",
-    "1w8qy3n"
+    "1w8qy3n",
+    "1vd7cfy"
   ],
   "videos": [
     {
@@ -6049,6 +6050,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-07T18:24:19.938802"
+    },
+    {
+      "post_id": "1vd7cfy",
+      "title": "Only employees think to protect their hands, apparently.",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-08T02:24:34.732003"
     }
   ]
 }
