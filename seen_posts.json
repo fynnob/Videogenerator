@@ -676,7 +676,8 @@
     "1w8zsci",
     "1wa5lez",
     "1wacfql",
-    "1warzhg"
+    "1warzhg",
+    "1w8nr3p"
   ],
   "videos": [
     {
@@ -6094,6 +6095,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-08T18:25:02.087349"
+    },
+    {
+      "post_id": "1w8nr3p",
+      "title": "My mom is obsessed with a diet",
+      "subreddit": "entitledparents",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-08T22:24:43.820484"
     }
   ]
 }
