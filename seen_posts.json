@@ -672,7 +672,8 @@
     "1sal5l0",
     "1w9pfa3",
     "1w8qy3n",
-    "1vd7cfy"
+    "1vd7cfy",
+    "1w8zsci"
   ],
   "videos": [
     {
@@ -6058,6 +6059,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-08T02:24:34.732003"
+    },
+    {
+      "post_id": "1w8zsci",
+      "title": "Entitled parents and the rest of the family",
+      "subreddit": "entitledparents",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-08T06:24:46.922862"
     }
   ]
 }
