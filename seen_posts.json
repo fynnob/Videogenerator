@@ -684,7 +684,8 @@
     "1w7dru3",
     "1wbo9l0",
     "1wb4knm",
-    "1vblmaa"
+    "1vblmaa",
+    "1wca7ll"
   ],
   "videos": [
     {
@@ -6166,6 +6167,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-10T06:24:45.455191"
+    },
+    {
+      "post_id": "1wca7ll",
+      "title": "ICE detained my dad today in the morning on his way to work",
+      "subreddit": "legaladvice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-10T10:24:49.701161"
     }
   ]
 }
