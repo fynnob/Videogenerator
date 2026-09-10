@@ -682,7 +682,8 @@
     "1wavqs3",
     "1wbd5i5",
     "1w7dru3",
-    "1wbo9l0"
+    "1wbo9l0",
+    "1wb4knm"
   ],
   "videos": [
     {
@@ -6148,6 +6149,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-09T18:25:38.684311"
+    },
+    {
+      "post_id": "1wb4knm",
+      "title": "Parents want me to take their advice but they are factually incorrect, and get upset if I correct them.",
+      "subreddit": "entitledparents",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-10T02:24:38.575185"
     }
   ]
 }
