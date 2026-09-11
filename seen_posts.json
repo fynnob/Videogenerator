@@ -689,7 +689,8 @@
     "1wc3bqs",
     "1wc5dpq",
     "1waykks",
-    "1wd18m4"
+    "1wd18m4",
+    "1wbghji"
   ],
   "videos": [
     {
@@ -6211,6 +6212,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-11T02:24:46.106517"
+    },
+    {
+      "post_id": "1wbghji",
+      "title": "I rebooted the computer and got chewed out.",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-11T06:24:55.099876"
     }
   ]
 }
