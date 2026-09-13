@@ -702,7 +702,8 @@
     "1w9399m",
     "1wemqad",
     "1wf1670",
-    "1wdzk4k"
+    "1wdzk4k",
+    "1wfc9lx"
   ],
   "videos": [
     {
@@ -6328,6 +6329,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-13T14:24:35.114700"
+    },
+    {
+      "post_id": "1wfc9lx",
+      "title": "Ex won\u2019t authorize me under hippa to have child seen at docors",
+      "subreddit": "Divorce",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-13T18:24:27.622347"
     }
   ]
 }
