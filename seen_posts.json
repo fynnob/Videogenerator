@@ -708,7 +708,8 @@
     "1wfat5m",
     "1wfk81c",
     "1wfwhu0",
-    "1wfyh41"
+    "1wfyh41",
+    "1wg13im"
   ],
   "videos": [
     {
@@ -6382,6 +6383,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-14T14:25:10.170919"
+    },
+    {
+      "post_id": "1wg13im",
+      "title": "I now understand the real challenges techsupport goes through.",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-14T18:25:37.220767"
     }
   ]
 }
