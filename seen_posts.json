@@ -707,7 +707,8 @@
     "1wfhflo",
     "1wfat5m",
     "1wfk81c",
-    "1wfwhu0"
+    "1wfwhu0",
+    "1wfyh41"
   ],
   "videos": [
     {
@@ -6373,6 +6374,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-14T10:24:39.705537"
+    },
+    {
+      "post_id": "1wfyh41",
+      "title": "Am I the asshole for being upset and wanting a refund for hiring a private venue that wasn\u2019t so \u2018private\u2019?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-14T14:25:10.170919"
     }
   ]
 }
