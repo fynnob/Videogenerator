@@ -713,7 +713,8 @@
     "1wg6gkg",
     "1wgm8lv",
     "1wgsfka",
-    "1we172w"
+    "1we172w",
+    "1w7wnwk"
   ],
   "videos": [
     {
@@ -6427,6 +6428,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-15T14:24:41.843761"
+    },
+    {
+      "post_id": "1w7wnwk",
+      "title": "My mom won't let me be independent",
+      "subreddit": "entitledparents",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-15T18:24:56.967287"
     }
   ]
 }
