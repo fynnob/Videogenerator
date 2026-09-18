@@ -723,7 +723,8 @@
     "1w9hfel",
     "1widvsk",
     "1wir3h3",
-    "1wi7ole"
+    "1wi7ole",
+    "1wjemat"
   ],
   "videos": [
     {
@@ -6517,6 +6518,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-18T02:24:20.902690"
+    },
+    {
+      "post_id": "1wjemat",
+      "title": "Things that can be said in a lithography class and in bed",
+      "subreddit": "stories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-18T06:24:12.804455"
     }
   ]
 }
