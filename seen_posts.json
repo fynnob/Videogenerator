@@ -728,7 +728,8 @@
     "1wii1na",
     "1wj66yb",
     "1wjugtm",
-    "1wj9u3f"
+    "1wj9u3f",
+    "1wjhwl1"
   ],
   "videos": [
     {
@@ -6562,6 +6563,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-18T22:24:38.128719"
+    },
+    {
+      "post_id": "1wjhwl1",
+      "title": "I Thought My New Neighbor Was a Serial Killer. He Was Just Lonely.",
+      "subreddit": "stories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-19T02:24:53.656691"
     }
   ]
 }
