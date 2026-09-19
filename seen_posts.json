@@ -733,7 +733,8 @@
     "1wji3ij",
     "1wk869c",
     "1wj1wh5",
-    "1wkc28a"
+    "1wkc28a",
+    "1wkwmoh"
   ],
   "videos": [
     {
@@ -6607,6 +6608,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-19T18:24:37.413315"
+    },
+    {
+      "post_id": "1wkwmoh",
+      "title": "Boss: \u201cClock out exactly at 5:00 or you\u2019re written up. No exceptions.\u201d So I did",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-19T22:24:47.220410"
     }
   ]
 }
