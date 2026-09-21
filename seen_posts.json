@@ -737,7 +737,8 @@
     "1wkwmoh",
     "1wl0542",
     "1wl79b5",
-    "1wi5ej4"
+    "1wi5ej4",
+    "1wlw2ai"
   ],
   "videos": [
     {
@@ -6643,6 +6644,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-20T14:25:30.620911"
+    },
+    {
+      "post_id": "1wlw2ai",
+      "title": "My friend asked to borrow my car, I declined, and he crashed someone else\u2019s the next day.",
+      "subreddit": "stories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-21T02:25:20.155165"
     }
   ]
 }
