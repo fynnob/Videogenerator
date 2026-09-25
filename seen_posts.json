@@ -762,7 +762,8 @@
     "1wpid98",
     "1wph6y0",
     "1wjr61a",
-    "1wpkz94"
+    "1wpkz94",
+    "1wo8t15"
   ],
   "videos": [
     {
@@ -6868,6 +6869,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-25T14:24:35.177008"
+    },
+    {
+      "post_id": "1wo8t15",
+      "title": "asked 3 times by the same woman to help find item",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-25T18:24:39.481289"
     }
   ]
 }
