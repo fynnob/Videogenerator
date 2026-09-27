@@ -772,7 +772,8 @@
     "1wqv1s3",
     "1wr3ds4",
     "1wr01vf",
-    "1v5ee0g"
+    "1v5ee0g",
+    "1wrfi74"
   ],
   "videos": [
     {
@@ -6958,6 +6959,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-27T14:25:06.209110"
+    },
+    {
+      "post_id": "1wrfi74",
+      "title": "today I messed up by thinking my sewing machine was broken for 9 years",
+      "subreddit": "tifu",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-27T22:24:49.340004"
     }
   ]
 }
