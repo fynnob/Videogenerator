@@ -776,7 +776,8 @@
     "1wrfi74",
     "1wrrdp5",
     "1wrwaq7",
-    "1ws8ix0"
+    "1ws8ix0",
+    "1wrj9mj"
   ],
   "videos": [
     {
@@ -6994,6 +6995,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-09-28T14:24:35.463052"
+    },
+    {
+      "post_id": "1wrj9mj",
+      "title": "Happy to pay!",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-28T18:24:37.915324"
     }
   ]
 }
