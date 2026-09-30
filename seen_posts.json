@@ -785,7 +785,8 @@
     "1uo4v8z",
     "1wtmlpt",
     "1wsypr6",
-    "1wt3y1p"
+    "1wt3y1p",
+    "1wu3m5m"
   ],
   "videos": [
     {
@@ -7075,6 +7076,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-09-30T10:24:32.065419"
+    },
+    {
+      "post_id": "1wu3m5m",
+      "title": "my \u201cfriend\u201d threw away my leggings bc they had \u201cbad energy\u201d",
+      "subreddit": "TrueOffMyChest",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-09-30T14:25:04.433435"
     }
   ]
 }
