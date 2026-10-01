@@ -791,7 +791,8 @@
     "1wu2r74",
     "1wui5u0",
     "1wusvd5",
-    "1wv6lzl"
+    "1wv6lzl",
+    "1wv9afu"
   ],
   "videos": [
     {
@@ -7129,6 +7130,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-01T18:25:36.850318"
+    },
+    {
+      "post_id": "1wv9afu",
+      "title": "Georgia pet cremation company gave my dog's ashes to the wrong family and they already scattered them. They offered to refund $240",
+      "subreddit": "legaladvice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-01T22:31:04.428171"
     }
   ]
 }
