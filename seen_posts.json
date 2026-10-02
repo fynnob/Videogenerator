@@ -795,7 +795,8 @@
     "1wv9afu",
     "1wv9fqa",
     "1wvg6tp",
-    "1wvo6yg"
+    "1wvo6yg",
+    "1wvxw2i"
   ],
   "videos": [
     {
@@ -7165,6 +7166,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-02T10:25:05.736829"
+    },
+    {
+      "post_id": "1wvxw2i",
+      "title": "today I messed up: Called the nurse line about hemorrhoids, fainted, and ended up needing plastic surgery to excavate a needle from my face",
+      "subreddit": "tifu",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-02T18:25:59.785289"
     }
   ]
 }
