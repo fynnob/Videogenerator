@@ -798,7 +798,8 @@
     "1wvo6yg",
     "1wvxw2i",
     "1wvo0bf",
-    "1wvqjam"
+    "1wvqjam",
+    "1wv6rk7"
   ],
   "videos": [
     {
@@ -7192,6 +7193,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-03T02:24:36.634766"
+    },
+    {
+      "post_id": "1wv6rk7",
+      "title": "I did the stuff to fix my problem and don't have an error anymore. What else should I do?",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-03T06:24:27.125247"
     }
   ]
 }
