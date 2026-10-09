@@ -831,7 +831,8 @@
     "1wz9g0i",
     "1ws9gy3",
     "1x15tn3",
-    "1x1mj6a"
+    "1x1mj6a",
+    "1x07zh8"
   ],
   "videos": [
     {
@@ -7489,6 +7490,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-09T14:25:42.554007"
+    },
+    {
+      "post_id": "1x07zh8",
+      "title": "Do you really need all that information...?",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-09T18:25:25.179103"
     }
   ]
 }
