@@ -827,7 +827,8 @@
     "1x040cy",
     "1x054pi",
     "1x0mwn7",
-    "1x00nop"
+    "1x00nop",
+    "1wz9g0i"
   ],
   "videos": [
     {
@@ -7453,6 +7454,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-08T22:24:28.356999"
+    },
+    {
+      "post_id": "1wz9g0i",
+      "title": "Neighbors were being inconsiderate with noise at night and I gave them a taste of their own medicine.",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-09T02:25:18.530578"
     }
   ]
 }
