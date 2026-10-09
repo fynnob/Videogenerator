@@ -828,7 +828,8 @@
     "1x054pi",
     "1x0mwn7",
     "1x00nop",
-    "1wz9g0i"
+    "1wz9g0i",
+    "1ws9gy3"
   ],
   "videos": [
     {
@@ -7462,6 +7463,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-09T02:25:18.530578"
+    },
+    {
+      "post_id": "1ws9gy3",
+      "title": "Bored pm and a cable with nowhere to go",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-09T06:24:58.520029"
     }
   ]
 }
