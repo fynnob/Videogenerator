@@ -830,7 +830,8 @@
     "1x00nop",
     "1wz9g0i",
     "1ws9gy3",
-    "1x15tn3"
+    "1x15tn3",
+    "1x1mj6a"
   ],
   "videos": [
     {
@@ -7480,6 +7481,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-09T10:24:43.949407"
+    },
+    {
+      "post_id": "1x1mj6a",
+      "title": "Never carry anything over 10 lbs by hand? Understood, sir. Enjoy waiting two days for your priority shipment.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-09T14:25:42.554007"
     }
   ]
 }
