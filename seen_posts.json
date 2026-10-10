@@ -835,7 +835,8 @@
     "1x07zh8",
     "1wrv2tj",
     "1x1q7a8",
-    "1x1s741"
+    "1x1s741",
+    "1x1yxgq"
   ],
   "videos": [
     {
@@ -7525,6 +7526,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-10T06:25:29.996854"
+    },
+    {
+      "post_id": "1x1yxgq",
+      "title": "I sold my ex-wife\u2019s wedding dress on eBay & used her pics in the listing",
+      "subreddit": "confession",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-10T10:24:43.688855"
     }
   ]
 }
