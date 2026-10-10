@@ -834,7 +834,8 @@
     "1x1mj6a",
     "1x07zh8",
     "1wrv2tj",
-    "1x1q7a8"
+    "1x1q7a8",
+    "1x1s741"
   ],
   "videos": [
     {
@@ -7516,6 +7517,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-10T02:24:35.653221"
+    },
+    {
+      "post_id": "1x1s741",
+      "title": "Am I the asshole for declining a wedding invitation after doing the math and realizing my \"friends\" are incredibly cheap?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-10T06:25:29.996854"
     }
   ]
 }
