@@ -841,7 +841,8 @@
     "1wdbp5r",
     "1wzb89m",
     "1x1cnlt",
-    "1x2xl57"
+    "1x2xl57",
+    "1wuoymj"
   ],
   "videos": [
     {
@@ -7579,6 +7580,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-11T10:24:46.500925"
+    },
+    {
+      "post_id": "1wuoymj",
+      "title": "\u201cI didn\u2019t ask for your help. I don\u2019t need your help.\u201d Okay, then.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-11T14:25:57.202979"
     }
   ]
 }
