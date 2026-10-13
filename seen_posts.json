@@ -844,7 +844,8 @@
     "1x2xl57",
     "1wuoymj",
     "1x2u873",
-    "1x3f34p"
+    "1x3f34p",
+    "1x58c48"
   ],
   "videos": [
     {
@@ -7606,6 +7607,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-11T22:25:08.865582"
+    },
+    {
+      "post_id": "1x58c48",
+      "title": "Laid off yesterday. HR is withholding my severance unless I sign a retroactive 2-year non-compete that would ban me from working in my field. Is this legal? (NY)",
+      "subreddit": "legaladvice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-13T22:25:00.123597"
     }
   ]
 }
