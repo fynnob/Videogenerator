@@ -847,7 +847,8 @@
     "1x3f34p",
     "1x58c48",
     "1x58ck2",
-    "1x5hvpl"
+    "1x5hvpl",
+    "1x4enf7"
   ],
   "videos": [
     {
@@ -7633,6 +7634,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-14T06:24:45.810322"
+    },
+    {
+      "post_id": "1x4enf7",
+      "title": "My bad hearing almost cost me my friendship and caused strife between a husband and wife",
+      "subreddit": "PointlessStories",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-14T10:25:33.853021"
     }
   ]
 }
