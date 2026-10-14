@@ -848,7 +848,8 @@
     "1x58c48",
     "1x58ck2",
     "1x5hvpl",
-    "1x4enf7"
+    "1x4enf7",
+    "1x3dc1y"
   ],
   "videos": [
     {
@@ -7642,6 +7643,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-14T10:25:33.853021"
+    },
+    {
+      "post_id": "1x3dc1y",
+      "title": "Adult Man in his mid-20s w/parents who are entitled to location tracking.",
+      "subreddit": "entitledparents",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-14T14:24:29.943417"
     }
   ]
 }
