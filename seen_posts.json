@@ -860,7 +860,8 @@
     "1x6u3k0",
     "1x6ym1m",
     "1x7865x",
-    "1x6ve3c"
+    "1x6ve3c",
+    "1wul558"
   ],
   "videos": [
     {
@@ -7750,6 +7751,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-16T14:24:39.599380"
+    },
+    {
+      "post_id": "1wul558",
+      "title": "Walmart told me I had to haul 215 lbs + of groceries back to the store to fix a failed checkout. Enter: Malicious Compliance.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-16T18:26:00.967826"
     }
   ]
 }
