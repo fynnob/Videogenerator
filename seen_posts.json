@@ -859,7 +859,8 @@
     "1x5r4gh",
     "1x6u3k0",
     "1x6ym1m",
-    "1x7865x"
+    "1x7865x",
+    "1x6ve3c"
   ],
   "videos": [
     {
@@ -7741,6 +7742,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-16T10:25:00.155206"
+    },
+    {
+      "post_id": "1x6ve3c",
+      "title": "today I messed up by trying to joke around with someone at work",
+      "subreddit": "tifu",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-16T14:24:39.599380"
     }
   ]
 }
