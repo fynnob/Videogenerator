@@ -863,7 +863,8 @@
     "1x6ve3c",
     "1wul558",
     "1x7iv4n",
-    "1wp3ibz"
+    "1wp3ibz",
+    "1x49qx4"
   ],
   "videos": [
     {
@@ -7777,6 +7778,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-17T02:25:26.585261"
+    },
+    {
+      "post_id": "1x49qx4",
+      "title": "Customer states monitor turns off 6 -10 sec. after booting into Windows....",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-17T06:26:25.707609"
     }
   ]
 }
