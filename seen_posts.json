@@ -864,7 +864,8 @@
     "1wul558",
     "1x7iv4n",
     "1wp3ibz",
-    "1x49qx4"
+    "1x49qx4",
+    "1wp4ipm"
   ],
   "videos": [
     {
@@ -7786,6 +7787,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-17T06:26:25.707609"
+    },
+    {
+      "post_id": "1wp4ipm",
+      "title": "I was a good kid and followed instructions.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-17T10:24:21.692001"
     }
   ]
 }
