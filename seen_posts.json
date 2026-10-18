@@ -869,7 +869,8 @@
     "1x7r0wj",
     "1x8bvxs",
     "1x5uprd",
-    "1x8hl3o"
+    "1x8hl3o",
+    "1x84mvj"
   ],
   "videos": [
     {
@@ -7831,6 +7832,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-18T00:42:43.150230"
+    },
+    {
+      "post_id": "1x84mvj",
+      "title": "Entitled parents care too much about who I marry",
+      "subreddit": "entitledparents",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-18T02:25:47.323352"
     }
   ]
 }
