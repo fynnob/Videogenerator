@@ -871,7 +871,8 @@
     "1x5uprd",
     "1x8hl3o",
     "1x84mvj",
-    "1x8oxkm"
+    "1x8oxkm",
+    "1x8umu3"
   ],
   "videos": [
     {
@@ -7849,6 +7850,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-18T06:24:36.132059"
+    },
+    {
+      "post_id": "1x8umu3",
+      "title": "I wish I could tell every retail person how much of a good job they\u2019re doing",
+      "subreddit": "TrueOffMyChest",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-18T10:25:08.187718"
     }
   ]
 }
