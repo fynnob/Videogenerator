@@ -874,7 +874,8 @@
     "1x8oxkm",
     "1x8umu3",
     "1x92a3f",
-    "1wmv5ja"
+    "1wmv5ja",
+    "1x9av7n"
   ],
   "videos": [
     {
@@ -7876,6 +7877,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-18T18:24:47.737897"
+    },
+    {
+      "post_id": "1x9av7n",
+      "title": "My (35F) boyfriend's (37M) flight data doesn't add up",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-18T22:25:40.564701"
     }
   ]
 }
