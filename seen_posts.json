@@ -870,7 +870,8 @@
     "1x8bvxs",
     "1x5uprd",
     "1x8hl3o",
-    "1x84mvj"
+    "1x84mvj",
+    "1x8oxkm"
   ],
   "videos": [
     {
@@ -7840,6 +7841,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-18T02:25:47.323352"
+    },
+    {
+      "post_id": "1x8oxkm",
+      "title": "Gave consent for medical procedure for someone I am not next of kin for",
+      "subreddit": "legaladvice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-18T06:24:36.132059"
     }
   ]
 }
