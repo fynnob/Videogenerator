@@ -875,7 +875,8 @@
     "1x8umu3",
     "1x92a3f",
     "1wmv5ja",
-    "1x9av7n"
+    "1x9av7n",
+    "1x8w67z"
   ],
   "videos": [
     {
@@ -7885,6 +7886,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-18T22:25:40.564701"
+    },
+    {
+      "post_id": "1x8w67z",
+      "title": "Customer got angry when I told her I didn't work there",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-19T02:24:39.489029"
     }
   ]
 }
