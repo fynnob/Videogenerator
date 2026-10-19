@@ -876,7 +876,8 @@
     "1x92a3f",
     "1wmv5ja",
     "1x9av7n",
-    "1x8w67z"
+    "1x8w67z",
+    "1x9eqci"
   ],
   "videos": [
     {
@@ -7894,6 +7895,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-19T02:24:39.489029"
+    },
+    {
+      "post_id": "1x9eqci",
+      "title": "Am I the asshole for getting upset that my friend secretly set me up on a date?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-19T06:24:54.952768"
     }
   ]
 }
