@@ -879,7 +879,8 @@
     "1x8w67z",
     "1x9eqci",
     "1x9q7fe",
-    "1x9va4d"
+    "1x9va4d",
+    "1wb0caq"
   ],
   "videos": [
     {
@@ -7921,6 +7922,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-19T14:24:40.327073"
+    },
+    {
+      "post_id": "1wb0caq",
+      "title": "User tried being funny with a problem report",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-19T18:24:28.535978"
     }
   ]
 }
