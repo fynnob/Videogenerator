@@ -887,7 +887,8 @@
     "1xalgba",
     "1xap4wj",
     "1xasobn",
-    "1xarn9k"
+    "1xarn9k",
+    "1xb75z6"
   ],
   "videos": [
     {
@@ -7993,6 +7994,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-21T06:24:59.436834"
+    },
+    {
+      "post_id": "1xb75z6",
+      "title": "Hair salon charged concurrent hours while working on 2 clients at once",
+      "subreddit": "legaladvice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-21T10:25:18.058088"
     }
   ]
 }
