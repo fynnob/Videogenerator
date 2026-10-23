@@ -902,7 +902,8 @@
     "1xcufbw",
     "1wk5pmw",
     "1xcysiz",
-    "1wjsn2o"
+    "1wjsn2o",
+    "1xdijmg"
   ],
   "videos": [
     {
@@ -8128,6 +8129,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-23T18:25:14.575021"
+    },
+    {
+      "post_id": "1xdijmg",
+      "title": "VA: Can you take photos of (visibly discernible) minors in the grocery store, while on the clock?",
+      "subreddit": "legaladvice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-23T22:25:06.130637"
     }
   ]
 }
