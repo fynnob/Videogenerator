@@ -899,7 +899,8 @@
     "1wlrt8p",
     "1xco5q6",
     "1xbb9k1",
-    "1xcufbw"
+    "1xcufbw",
+    "1wk5pmw"
   ],
   "videos": [
     {
@@ -8101,6 +8102,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-23T06:25:17.660086"
+    },
+    {
+      "post_id": "1wk5pmw",
+      "title": "Equipment to expensive? Wait a few years and pay double instead.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-23T11:00:37.089399"
     }
   ]
 }
