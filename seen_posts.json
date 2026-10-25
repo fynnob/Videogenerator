@@ -914,7 +914,8 @@
     "1xeomv9",
     "1xerm6z",
     "1xedg7o",
-    "1xf300r"
+    "1xf300r",
+    "1xdn84g"
   ],
   "videos": [
     {
@@ -8236,6 +8237,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-25T15:24:15.569977"
+    },
+    {
+      "post_id": "1xdn84g",
+      "title": "It\u2019s the customer who says \u201cI don\u2019t work here, lady\u201d",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-25T23:24:41.922087"
     }
   ]
 }
