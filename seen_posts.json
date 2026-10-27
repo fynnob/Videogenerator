@@ -922,7 +922,8 @@
     "1xftp14",
     "1xeldni",
     "1xfzxi3",
-    "1xdyqon"
+    "1xdyqon",
+    "1xg36ra"
   ],
   "videos": [
     {
@@ -8308,6 +8309,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-27T01:42:36.848035"
+    },
+    {
+      "post_id": "1xg36ra",
+      "title": "My manager said there were no exceptions to the booking policy, so I stopped making exceptions for him too",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-27T03:47:54.111048"
     }
   ]
 }
