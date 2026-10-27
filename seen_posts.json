@@ -926,7 +926,8 @@
     "1xg36ra",
     "1wdu7o5",
     "1xg0muq",
-    "1xgmhen"
+    "1xgmhen",
+    "1w9vdjy"
   ],
   "videos": [
     {
@@ -8344,6 +8345,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-27T19:25:05.069443"
+    },
+    {
+      "post_id": "1w9vdjy",
+      "title": "Remote family computer tech support",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-27T23:25:01.684629"
     }
   ]
 }
