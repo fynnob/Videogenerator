@@ -930,7 +930,8 @@
     "1w9vdjy",
     "1xgifde",
     "1xhf9ll",
-    "1xh54nv"
+    "1xh54nv",
+    "1xhpqbb"
   ],
   "videos": [
     {
@@ -8380,6 +8381,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-10-28T11:24:30.717473"
+    },
+    {
+      "post_id": "1xhpqbb",
+      "title": "Do you split shared expenses/big purchases (like trips) with your significant other by proportion of shared income when there\u2019s a very large salary difference (27F $94k) (28M $314k)?",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-28T19:24:47.279236"
     }
   ]
 }
