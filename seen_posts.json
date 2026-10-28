@@ -931,7 +931,8 @@
     "1xgifde",
     "1xhf9ll",
     "1xh54nv",
-    "1xhpqbb"
+    "1xhpqbb",
+    "1wb28rk"
   ],
   "videos": [
     {
@@ -8389,6 +8390,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-28T19:24:47.279236"
+    },
+    {
+      "post_id": "1wb28rk",
+      "title": "\"We need you in the office full-time starting Monday.\" Okay, you got it.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-10-28T23:25:26.138603"
     }
   ]
 }
