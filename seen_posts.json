@@ -947,7 +947,8 @@
     "1xiyh1n",
     "1xjt51p",
     "1xk0ux3",
-    "1xepfzp"
+    "1xepfzp",
+    "1xkusm2"
   ],
   "videos": [
     {
@@ -8533,6 +8534,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-10-31T23:25:04.478072"
+    },
+    {
+      "post_id": "1xkusm2",
+      "title": "Am I the asshole for telling my parents my sister is going to a group home",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-01T07:24:37.081895"
     }
   ]
 }
