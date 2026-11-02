@@ -953,7 +953,8 @@
     "1xkz23p",
     "1x4l1eb",
     "1um51si",
-    "1xl7ki0"
+    "1xl7ki0",
+    "1xllszx"
   ],
   "videos": [
     {
@@ -8587,6 +8588,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-11-02T07:24:48.996500"
+    },
+    {
+      "post_id": "1xllszx",
+      "title": "A Halloween event advertised a $500 costume contest that didn't exist, so I organized a small rebellion that succeeded.",
+      "subreddit": "PettyRevenge",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-02T15:56:17.951521"
     }
   ]
 }
