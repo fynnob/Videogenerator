@@ -952,7 +952,8 @@
     "1xkpq4i",
     "1xkz23p",
     "1x4l1eb",
-    "1um51si"
+    "1um51si",
+    "1xl7ki0"
   ],
   "videos": [
     {
@@ -8578,6 +8579,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-11-02T03:25:39.825822"
+    },
+    {
+      "post_id": "1xl7ki0",
+      "title": "College's AI software categorized me incorrectly as out-of-state and now won't give me a refund.",
+      "subreddit": "legaladvice",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-02T07:24:48.996500"
     }
   ]
 }
