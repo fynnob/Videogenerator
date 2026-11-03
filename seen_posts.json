@@ -957,7 +957,8 @@
     "1xllszx",
     "1xmau5n",
     "1xma8j2",
-    "1xmh6zx"
+    "1xmh6zx",
+    "1w7vw7d"
   ],
   "videos": [
     {
@@ -8623,6 +8624,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-11-03T11:24:26.994278"
+    },
+    {
+      "post_id": "1w7vw7d",
+      "title": "\"Follow the official manual only\" okay, enjoy the three day downtime",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-03T15:25:09.453208"
     }
   ]
 }
