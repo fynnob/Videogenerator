@@ -968,7 +968,8 @@
     "1xo452p",
     "1xotagm",
     "1vx0h72",
-    "1xp2lju"
+    "1xp2lju",
+    "1xpfaed"
   ],
   "videos": [
     {
@@ -8722,6 +8723,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-11-06T11:24:16.311027"
+    },
+    {
+      "post_id": "1xpfaed",
+      "title": "Shaddup and listen!",
+      "subreddit": "talesfromtechsupport",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-06T19:26:29.928098"
     }
   ]
 }
