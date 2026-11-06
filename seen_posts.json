@@ -966,7 +966,8 @@
     "1xo3pxl",
     "1xob3jd",
     "1xo452p",
-    "1xotagm"
+    "1xotagm",
+    "1vx0h72"
   ],
   "videos": [
     {
@@ -8704,6 +8705,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-11-06T03:25:07.546768"
+    },
+    {
+      "post_id": "1vx0h72",
+      "title": "Spnd more money? You got it.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-06T07:25:12.201419"
     }
   ]
 }
