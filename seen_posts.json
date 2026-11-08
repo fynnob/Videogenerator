@@ -979,7 +979,8 @@
     "1xq6d9d",
     "1xigqei",
     "1xqqrmh",
-    "1vqw2q3"
+    "1vqw2q3",
+    "1xrbtqs"
   ],
   "videos": [
     {
@@ -8821,6 +8822,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-11-08T15:25:03.540417"
+    },
+    {
+      "post_id": "1xrbtqs",
+      "title": "My mom has been acting strange around me and my boyfriend lately.",
+      "subreddit": "TrueOffMyChest",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-08T23:25:06.797378"
     }
   ]
 }
