@@ -989,7 +989,8 @@
     "1xs6ejg",
     "1xryvtc",
     "1xhv3sl",
-    "1xsmzjb"
+    "1xsmzjb",
+    "1xrpiyf"
   ],
   "videos": [
     {
@@ -8911,6 +8912,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-11-10T15:30:05.756328"
+    },
+    {
+      "post_id": "1xrpiyf",
+      "title": "Wore my lab coat to the bus stop and a woman made me diagnose her husband's \"gas problem\"",
+      "subreddit": "IDontWorkHereLady",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-10T19:24:24.807664"
     }
   ]
 }
