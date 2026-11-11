@@ -990,7 +990,8 @@
     "1xryvtc",
     "1xhv3sl",
     "1xsmzjb",
-    "1xrpiyf"
+    "1xrpiyf",
+    "1xszw51"
   ],
   "videos": [
     {
@@ -8920,6 +8921,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-11-10T19:24:24.807664"
+    },
+    {
+      "post_id": "1xszw51",
+      "title": "would I be the asshole if I blocked ChatGPT on my home wifi?",
+      "subreddit": "AmItheAsshole",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-11T11:25:10.068221"
     }
   ]
 }
