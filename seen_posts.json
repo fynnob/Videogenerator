@@ -992,7 +992,8 @@
     "1xsmzjb",
     "1xrpiyf",
     "1xszw51",
-    "1xtoaa6"
+    "1xtoaa6",
+    "1xte6yd"
   ],
   "videos": [
     {
@@ -8938,6 +8939,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-11-11T19:24:50.360694"
+    },
+    {
+      "post_id": "1xte6yd",
+      "title": "My (29F) boyfriend (30M) made a comment while we were on holidays and since then I\u2019m anxious anytime he touches me.",
+      "subreddit": "relationship_advice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-12T03:24:51.932388"
     }
   ]
 }
