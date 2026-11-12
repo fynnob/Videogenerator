@@ -995,7 +995,8 @@
     "1xtoaa6",
     "1xte6yd",
     "1xtfo15",
-    "1xtzmmx"
+    "1xtzmmx",
+    "1xsauvu"
   ],
   "videos": [
     {
@@ -8965,6 +8966,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-11-12T19:24:44.823830"
+    },
+    {
+      "post_id": "1xsauvu",
+      "title": "New manager said every drink has to be measured with a jigger \"no exceptions.\" On the busiest game day of the year.",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-12T23:24:29.152506"
     }
   ]
 }
