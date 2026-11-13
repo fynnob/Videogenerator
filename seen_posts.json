@@ -996,7 +996,8 @@
     "1xte6yd",
     "1xtfo15",
     "1xtzmmx",
-    "1xsauvu"
+    "1xsauvu",
+    "1vr8pqr"
   ],
   "videos": [
     {
@@ -8974,6 +8975,14 @@
       "voice": "en-US-GuyNeural",
       "score": "N/A",
       "made_at": "2026-11-12T23:24:29.152506"
+    },
+    {
+      "post_id": "1vr8pqr",
+      "title": "Office Muzak",
+      "subreddit": "MaliciousCompliance",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-13T03:25:46.620715"
     }
   ]
 }
