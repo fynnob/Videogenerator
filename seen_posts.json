@@ -1005,7 +1005,8 @@
     "1xvzpio",
     "1xvn70p",
     "1xvub6j",
-    "1xt5jht"
+    "1xt5jht",
+    "1xvwcjq"
   ],
   "videos": [
     {
@@ -9055,6 +9056,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-11-14T23:24:56.678708"
+    },
+    {
+      "post_id": "1xvwcjq",
+      "title": "I\u2019m a woman and I paid for a cuddling service.",
+      "subreddit": "TrueOffMyChest",
+      "voice": "en-US-GuyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-15T03:24:45.789975"
     }
   ]
 }
