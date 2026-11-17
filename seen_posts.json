@@ -1017,7 +1017,8 @@
     "1xy7d22",
     "1xy2jys",
     "1xyd5rw",
-    "1xyh5vc"
+    "1xyh5vc",
+    "1xybg8t"
   ],
   "videos": [
     {
@@ -9163,6 +9164,14 @@
       "voice": "en-US-JennyNeural",
       "score": "N/A",
       "made_at": "2026-11-17T11:25:01.217150"
+    },
+    {
+      "post_id": "1xybg8t",
+      "title": "My coworkers and I keep having our checks withdrawn from our accounts because of nonsufficient funds, after they have originally been approved.",
+      "subreddit": "legaladvice",
+      "voice": "en-US-JennyNeural",
+      "score": "N/A",
+      "made_at": "2026-11-17T15:24:36.236847"
     }
   ]
 }
